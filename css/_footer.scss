@@ -1,0 +1,47 @@
+footer p {
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 47px;
+    margin-bottom: 0;
+}
+.parte-1, .parte-2 {
+    text-align: center;
+}
+
+footer .parte-1 ul {
+    padding: 0;
+    display: inline-block;
+    margin-top: 22px;
+    margin-bottom: 46px;
+
+    
+}
+footer .parte-1 ul li{
+    display: inline;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 28px;
+
+}
+
+footer .parte-1 ul li a{
+    text-decoration: none;
+    color: #CDD6E0;
+}
+
+.icon-footer {
+    margin-left: 20px;
+}
+
+.parte-2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-bottom: 23px;
+}
+.parte-3 {
+    background: #572EE5;
+    height: 5px;
+}

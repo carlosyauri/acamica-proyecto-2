@@ -7,29 +7,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <title>Document</title>
 </head>
-<body>
+<body id="body"></body>
     <div class="linea"></div>
-
     <header> 
         <div class="container-header">
             <div class="logo">
-                <a href="index.html"><img src="/assets/logo-mobile.svg" alt="logo"></a>
+                <a href="index.html"><img src="/assets/logo-mobile.svg" alt="logo" id="logoNoc"></a>
             </div>
             <nav class="nav">
                 <div class="menu">
                     <input type="checkbox" id="checkbox">
                     <label for="checkbox">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span class="span1"></span>
+                    <span class="span1"></span>
+                    <span class="span1"></span>
                     </label>
                     <ul>
-                        <li><a class="icon-nav" href="#">Modo Nocturno</a></li>
-                        <li><a class="icon-nav" href="#">Favoritos</a></li>
-                        <li><a class="icon-nav" href="#">Mis GIFOS</a></li>
+                        <li><a class="icon-nav1" id="nocturno" href="#">Modo Nocturno</a></li>
+                        <span class="spanli"></span>
+                        <li><a class="icon-nav2" id="favoritos" href="#">Favoritos</a></li>
+                        <span class="spanli"></span>
+                        <li><a class="icon-nav3" id="misGifos" href="#">Mis GIFOS</a></li>
+                        <span class="spanli"></span>
                     </ul>
                 </div>
             </nav>
@@ -41,14 +44,14 @@
             <img src="/assets/ilustra_header.svg" alt="ilustra" class="ilustra">
             <div class="bordeBusqueda">
                 <input type="text" name="realbox" id="" placeholder="Busca GIFOS y más">
-                <img src="/assets/icon-search.svg" alt="lupa">
+                <img src="/assets/icon-search.svg" alt="lupa" id="icon-search">
             </div>
         </section>
         <section id="sector-2">
                 <h2>Trending:</h2>
                 <p>Reations, Enternaiment, Sport, Stickers, Artists</p>
         </section>
-        <section id="sector-3">
+        <section class="sector-3" >
             <h2>Trending GIFOS</h2>
             <p>Mira los últimos <span>GIFOS de nuestra comunidad.</span></p>
             <img src="https://i.pinimg.com/originals/d9/d2/df/d9d2df0193672e43c6ad4b41eea3e1f3.gif" alt="gatitoMotoquero">
@@ -68,5 +71,6 @@
         </div>
         <div class="parte-3"></div>
     </footer>
+    <script src="/javaScripts/general.js"></script>
 </body>
 </html>

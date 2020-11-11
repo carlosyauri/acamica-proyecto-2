@@ -16,6 +16,10 @@ body {
   width: 100%;
 }
 
+.bodyNocturno {
+  background-color: #37383C;
+}
+
 .container-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -29,13 +33,14 @@ body {
   width: 48.8px;
   height: 48.8px;
   margin-left: 22px;
-  margin-top: 34px;
+  margin-top: 29px;
   margin-bottom: 17.2px;
 }
 
 .menu {
-  margin-top: 36px;
-  margin-bottom: 27px;
+  margin-top: 47px;
+  margin-right: 26px;
+  margin-bottom: 34px;
 }
 
 .linea {
@@ -47,28 +52,22 @@ body {
   display: none;
 }
 
-.menu span {
+.menu .span1 {
   display: block;
-  width: 18px;
+  width: 15px;
   height: 2px;
-  background: black;
-  margin-bottom: 3px;
+  background: #572EE5;
+  margin-bottom: 4px;
   position: relative;
   z-index: 1;
-  margin-right: 19px;
   -webkit-transition: -webkit-transform 0.5s ease;
   transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
   transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
-.nav {
-  margin-top: 16px;
-}
-
 .nav ul {
   width: 100%;
-  /* position: relative */
   position: absolute;
   right: 0px;
   overflow: hidden;
@@ -96,8 +95,27 @@ body {
   line-height: 60px;
 }
 
+.spanli {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 167px;
+  width: 41px;
+  height: 0.1px;
+  margin-bottom: 4px;
+  position: relative;
+  z-index: 1;
+  opacity: 0.3;
+  border: 1px solid #FFFFFF;
+}
+
+.icon-nav1 {
+  margin-top: 17px;
+}
+
 input[type="checkbox"]:checked ~ ul {
-  height: 240px;
+  height: 100%;
+  position: fixed;
 }
 
 input[type="checkbox"]:checked ~ label span {
@@ -162,7 +180,7 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
       flex-wrap: wrap;
   height: 50px;
   width: 90%;
-  background: #FFFFFF;
+  background: transparent;
   border: 1px solid #572EE5;
   border-radius: 27px;
 }
@@ -206,7 +224,7 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   line-height: 25px;
 }
 
-#sector-3 {
+.sector-3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -219,7 +237,11 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   padding-bottom: 82px;
 }
 
-#sector-3 h2 {
+.bodyNocturno .sector-3 {
+  background: #222326;
+}
+
+.sector-3 h2 {
   width: 100%;
   margin-top: 46px;
   margin-bottom: 7px;
@@ -230,7 +252,7 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   line-height: 30px;
 }
 
-#sector-3 p {
+.sector-3 p {
   font-family: 'Roboto', sans-serif;
   width: 60%;
   font-size: 16px;
@@ -239,7 +261,7 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   line-height: 23px;
 }
 
-#sector-3 span {
+.sector-3 span {
   display: inline-block;
 }
 

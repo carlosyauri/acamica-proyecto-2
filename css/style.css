@@ -193,6 +193,28 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   text-align: center;
 }
 
+.sector-resultados {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  row-gap: 15px;
+}
+
+.sector-resultados .resultados img {
+  width: 260px;
+  height: 200px;
+}
+
 #sector-2 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -239,6 +261,31 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
 
 .bodyNocturno .sector-3 {
   background: #222326;
+}
+
+.sector-3 .gifos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow: hidden;
+}
+
+.sector-3 .gifos .img {
+  width: 243px;
+  height: 187px;
+  margin-right: 22px;
+}
+
+.sector-3 .gifos .flechaIzq,
+.flechaDer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 22px;
 }
 
 .sector-3 h2 {

@@ -48,4 +48,87 @@ nocturno.addEventListener("click", () => {
         // btnGifos.src = "assets/button-crear-gifo.svg"
         nocturno.innerHTML = "Modo Nocturno"
         
+}
+
+
+async function ponerGifo() {
+    try{
+        let tranding = "http://api.giphy.com/v1/gifs/trending?api_key=DwxPXTIv1WcfUVgrKe2czLBIw3NDagaf&limit=12"
+        let data = await fetch(tranding);
+        return data.json();
     }
+    catch (err){
+        console.log('Fallo el fetch', err)
+    }
+    
+}
+
+
+let arrayGifos;
+
+async function menu() {
+
+    try{
+
+        arrayGifos = [];
+        let nuevo = await ponerGifo();
+
+        nuevo.data.forEach(element => {
+            arrayGifos.push(element.images.downsized.url);
+        });
+
+        let gifo1 = document.getElementById("gifimg1");
+        let gifo2 = document.getElementById("gifimg2");
+        let gifo3 = document.getElementById("gifimg3");
+        gifo1.src = arrayGifos[0] ;
+        gifo2.src = arrayGifos[1] ;
+        gifo3.src = arrayGifos[2] ;
+
+    }   
+    catch(err){
+        console.log('Fallo el fetch', err)
+    }
+}
+
+menu();
+
+
+let sliderLeft = document.getElementById("flechaIzq")
+let sliderRight = document.getElementById("flechaDer")
+
+sliderLeft.addEventListener("click", () => {
+    cambiarImagen(-1);
+})
+
+sliderRight.addEventListener("click", () => {
+    cambiarImagen(1);
+})
+
+
+let posicionActual = 0
+
+function cambiarImagen(numero) {
+
+    let cantImagenes = arrayGifos.length;
+    posicionActual = posicionActual + numero;
+
+
+    if ((posicionActual + numero + 2) > cantImagenes) return ;
+
+    if ((posicionActual + numero) < 0) posicionActual = 0;
+    
+
+    let gifo1 = document.getElementById("gifimg1");
+    let gifo2 = document.getElementById("gifimg2");
+    let gifo3 = document.getElementById("gifimg3");
+    gifo1.src = arrayGifos[posicionActual]
+    gifo2.src = arrayGifos[posicionActual + 1]
+    gifo3.src = arrayGifos[posicionActual + 2]
+
+}
+
+
+
+// let input = $("#input")
+// let serch = "http://api.giphy.com/v1/gifs/search?api_key=DwxPXTIv1WcfUVgrKe2czLBIw3NDagaf&limit=12"
+

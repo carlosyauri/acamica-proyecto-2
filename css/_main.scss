@@ -49,6 +49,20 @@
 
 }
 
+.sector-resultados {
+    display: flex;
+    justify-content: center;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+        row-gap: 15px;
+}
+
+.sector-resultados .resultados img {
+    width: 260px;
+    height: 200px;
+}
 #sector-2 {
     display: flex;
     justify-content: center;
@@ -87,6 +101,23 @@
     }
 }
 
+.sector-3 .gifos{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.sector-3 .gifos .img {
+    width: 243px;
+    height: 187px;
+    margin-right: 22px;
+}
+
+.sector-3 .gifos .flechaIzq ,
+.flechaDer {
+    display: flex;
+    margin-right: 22px;
+}
 
 .sector-3 h2 {
     width: 100%;

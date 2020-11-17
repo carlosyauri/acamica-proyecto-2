@@ -210,6 +210,14 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   row-gap: 15px;
 }
 
+#h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 35px;
+  color: #572EE5;
+  text-align: center;
+  line-height: 30px;
+}
+
 .sector-resultados .resultados img {
   width: 260px;
   height: 200px;

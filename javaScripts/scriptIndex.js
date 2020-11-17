@@ -1,11 +1,15 @@
 //SECCIÓN 1 - CONECTAR EL INPUT CON LA API
 
 //Evento que trae las sugerencias de títulos de gifos 
+
+let arrayTitle ;
+let arrayGifs ;
+
+
 let input = document.getElementById("input")
+input.addEventListener("input", async (e) => {
 
-input.addEventListener("input", (e) => {
-
-    cerrarDivs();
+    cerrarLista("#divBorrar");
 
     let textoIngresado = e.target.value
     
@@ -13,24 +17,6 @@ input.addEventListener("input", (e) => {
     if ( textoIngresado == " "){
         return;
     }
-
-    async function autoCompletar () {
-
-        let searchGifos = `http://api.giphy.com/v1/gifs/search?api_key=DwxPXTIv1WcfUVgrKe2czLBIw3NDagaf&q=${textoIngresado}&limit=12`; 
-        let autocompletado = await fetch(searchGifos);
-        return autocompletado.json()
-    }
-
-    async function prueba (){
-        let arrayTitle = []
-        let arrayGifs = []
-            
-        let arrayCompletado =  await autoCompletar()
-        console.log(arrayCompletado)
-        arrayCompletado.data.forEach(element => {
-            arrayTitle.push(element.title);
-            arrayGifs.push(element.images.downsized.url)
-        })            
 
     //Creando div de sugerencia
     let divContainer = document.getElementById("divContainer")
@@ -40,7 +26,13 @@ input.addEventListener("input", (e) => {
     divContainer.appendChild(div) 
 
 
-
+    let arrayCompletado =  await autoCompletar(textoIngresado)
+    arrayTitle = []
+    arrayGifs = []
+    arrayCompletado.data.forEach(element => {
+        arrayTitle.push(element.title);
+        arrayGifs.push(element.images.downsized.url)
+    })            
 
 
     
@@ -66,30 +58,26 @@ input.addEventListener("input", (e) => {
                     resultados.appendChild(img)
                 }
 
-                cerrarLista();
+                cerrarLista("#divContainer");
                 return false;
             })
         }
     })
 
-} 
-
-prueba();
-                        
 });
 
-//funcion que elimina las sugerencias 
-function cerrarLista() {
+async function autoCompletar (textoIngresado) {
 
-    let elementos = document.querySelectorAll("#divContainer")
-    elementos.forEach(element => {
-        element.parentNode.removeChild(element); 
-    })
+    let searchGifos = `http://api.giphy.com/v1/gifs/search?api_key=DwxPXTIv1WcfUVgrKe2czLBIw3NDagaf&q=${textoIngresado}&limit=12`; 
+    let autocompletado = await fetch(searchGifos);
+    return autocompletado.json()
 }
 
-function cerrarDivs() {
 
-    let elementos = document.querySelectorAll("#divBorrar")
+//funcion que elimina las sugerencias 
+function cerrarLista(x) {
+
+    let elementos = document.querySelectorAll(x)
     elementos.forEach(element => {
         element.parentNode.removeChild(element); 
     })

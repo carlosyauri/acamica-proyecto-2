@@ -5,10 +5,14 @@ let input = document.getElementById("input")
 
 input.addEventListener("input", (e) => {
 
+    cerrarDivs();
+
     let textoIngresado = e.target.value
     
-    
-    if ( textoIngresado == " ") return;
+
+    if ( textoIngresado == " "){
+        return;
+    }
 
     async function autoCompletar () {
 
@@ -16,8 +20,6 @@ input.addEventListener("input", (e) => {
         let autocompletado = await fetch(searchGifos);
         return autocompletado.json()
     }
-
-
 
     async function prueba (){
         let arrayTitle = []
@@ -28,20 +30,24 @@ input.addEventListener("input", (e) => {
         arrayCompletado.data.forEach(element => {
             arrayTitle.push(element.title);
             arrayGifs.push(element.images.downsized.url)
-        })
-
-        console.log(arrayTitle)
-            
+        })            
 
     //Creando div de sugerencia
     let divContainer = document.getElementById("divContainer")
     let div = document.createElement("div")
     div.setAttribute("class","div-segerencia")
+    div.setAttribute("id", "divBorrar")
     divContainer.appendChild(div) 
+
+
+
+
+
     
-    if(arrayTitle.length == 0) return false;
+    if(arrayTitle.length == 0) return;
     arrayTitle.forEach(element => {
-        if(element.substr(0, textoIngresado.length) == textoIngresado) {
+
+        if(element.toLowerCase().includes(textoIngresado.toLowerCase())){
             let elementoLista = document.createElement("div")
             div.appendChild(elementoLista)
             elementoLista.innerHTML = `${element}`
@@ -76,6 +82,14 @@ prueba();
 function cerrarLista() {
 
     let elementos = document.querySelectorAll("#divContainer")
+    elementos.forEach(element => {
+        element.parentNode.removeChild(element); 
+    })
+}
+
+function cerrarDivs() {
+
+    let elementos = document.querySelectorAll("#divBorrar")
     elementos.forEach(element => {
         element.parentNode.removeChild(element); 
     })

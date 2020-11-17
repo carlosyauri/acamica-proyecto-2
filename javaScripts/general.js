@@ -127,8 +127,3 @@ function cambiarImagen(numero) {
 
 }
 
-
-
-// let input = $("#input")
-// let serch = "http://api.giphy.com/v1/gifs/search?api_key=DwxPXTIv1WcfUVgrKe2czLBIw3NDagaf&limit=12"
-

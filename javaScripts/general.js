@@ -76,13 +76,26 @@ async function menu() {
         nuevo.data.forEach(element => {
             arrayGifos.push(element.images.downsized.url);
         });
+        
+        for(let i = 0; i < 3 ; i++){
 
-        let gifo1 = document.getElementById("gifimg1");
-        let gifo2 = document.getElementById("gifimg2");
-        let gifo3 = document.getElementById("gifimg3");
-        gifo1.src = arrayGifos[0] ;
-        gifo2.src = arrayGifos[1] ;
-        gifo3.src = arrayGifos[2] ;
+            let divPrincipal = document.getElementById("gifosCentral")
+            let div = document.createElement("div")
+            div.id = "divGifo"
+            let gifo = document.createElement("img")
+            gifo.src = arrayGifos[i]
+            gifo.id = "imgGifo"
+            div.appendChild(gifo)
+            divPrincipal.appendChild(div)
+
+        }
+
+        // let gifo1 = document.getElementById("gifimg1");
+        // let gifo2 = document.getElementById("gifimg2");
+        // let gifo3 = document.getElementById("gifimg3");
+        // gifo1.src = arrayGifos[0] ;
+        // gifo2.src = arrayGifos[1] ;
+        // gifo3.src = arrayGifos[2] ;
 
     }   
     catch(err){

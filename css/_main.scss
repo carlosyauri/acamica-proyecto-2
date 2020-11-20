@@ -49,7 +49,7 @@
 
 }
 
-.sector-resultados {
+#resultados {
     display: flex;
     justify-content: center;
         display: grid;
@@ -67,10 +67,27 @@
     line-height: 30px;
 }
 
-.sector-resultados .resultados img {
+.sector-resultados #resultados img {
     width: 260px;
     height: 200px;
 }
+
+.linea {
+    opacity: 0.5;
+    border: 1px solid #9CAFC3;
+}
+
+#verMas {
+    display: flex;
+    justify-content: center;
+}
+
+#verMas img {
+    margin-top: 78px;
+    margin-bottom: 79px;
+}
+
+
 #sector-2 {
     display: flex;
     justify-content: center;
@@ -84,7 +101,7 @@
     color: #572EE5;
     text-align: center;
     line-height: 25px;
-    margin-top: 31px;
+    // margin-top: 31px;
     margin-bottom: 2px;
 }
 
@@ -109,17 +126,25 @@
     }
 }
 
-.sector-3 .gifos{
+.gifos {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     overflow: hidden;
+
 }
 
-.sector-3 .gifos .img {
+#divGifo {
+    display: inline;
+}
+
+
+.sector-3 .gifosCentral #imgGifo {
     width: 243px;
     height: 187px;
     margin-right: 22px;
 }
+
 
 .sector-3 .gifos .flechaIzq ,
 .flechaDer {

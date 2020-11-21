@@ -1,3 +1,5 @@
+
+
 let body = document.querySelector("body")
 let nocturno = document.getElementById("nocturno")
 let logoNoc = document.getElementById("logoNoc");
@@ -73,34 +75,65 @@ async function menu() {
         arrayGifos = [];
         let nuevo = await ponerGifo();
 
+        console.log(nuevo)
         nuevo.data.forEach(element => {
             arrayGifos.push(element.images.downsized.url);
         });
         
-        for(let i = 0; i < 3 ; i++){
 
-            let divPrincipal = document.getElementById("gifosCentral")
-            let div = document.createElement("div")
-            div.id = "divGifo"
-            let gifo = document.createElement("img")
-            gifo.src = arrayGifos[i]
-            gifo.id = "imgGifo"
-            div.appendChild(gifo)
-            divPrincipal.appendChild(div)
+        let gifo1 = document.getElementById("gifimg1");
+        let gifo2 = document.getElementById("gifimg2");
+        let gifo3 = document.getElementById("gifimg3");
+        gifo1.src = arrayGifos[0] ;
+        gifo2.src = arrayGifos[1] ;
+        gifo3.src = arrayGifos[2] ;
 
-        }
 
-        // let gifo1 = document.getElementById("gifimg1");
-        // let gifo2 = document.getElementById("gifimg2");
-        // let gifo3 = document.getElementById("gifimg3");
-        // gifo1.src = arrayGifos[0] ;
-        // gifo2.src = arrayGifos[1] ;
-        // gifo3.src = arrayGifos[2] ;
+        arrayGifosName = [];
+        nuevo.data.forEach(element => {
+            arrayGifosName.push(element.username);
+        });
+
+
+        arrayGifosTitulos = [];
+        nuevo.data.forEach(element => {
+            arrayGifosTitulos.push(element.title);
+        });
+
+        gifo1.addEventListener("click", () => {
+            localStorage.removeItem("title")
+            localStorage.removeItem("img")
+            localStorage.removeItem("nameImg")
+
+            localStorage.setItem("img", `${gifo1.src}`)
+            localStorage.setItem("nameImg", `${arrayGifosName[0]}`)
+            localStorage.setItem("title", `${arrayGifosTitulos[0]}`)
+        });
+        gifo2.addEventListener("click", () => {
+            localStorage.removeItem("title")
+            localStorage.removeItem("img")
+            localStorage.removeItem("nameImg")
+
+            localStorage.setItem("img", `${gifo2.src}`)
+            localStorage.setItem("nameImg", `${arrayGifosName[1]}`)
+            localStorage.setItem("title", `${arrayGifosTitulos[1]}`)
+        });
+        gifo3.addEventListener("click", () => {
+            localStorage.removeItem("title")
+            localStorage.removeItem("img")
+            localStorage.removeItem("nameImg")
+
+            localStorage.setItem("img", `${gifo3.src}`)
+            localStorage.setItem("nameImg", `${arrayGifosName[2]}`)
+            localStorage.setItem("title", `${arrayGifosTitulos[2]}`)
+        });
+       
 
     }   
     catch(err){
         console.log('Fallo el fetch', err)
     }
+
 }
 
 menu();
@@ -138,5 +171,33 @@ function cambiarImagen(numero) {
     gifo2.src = arrayGifos[posicionActual + 1]
     gifo3.src = arrayGifos[posicionActual + 2]
 
-}
 
+    gifo1.addEventListener("click", () => {
+        localStorage.removeItem("nameImg")
+        localStorage.setItem("nameImg", `${arrayGifosName[posicionActual]}`)
+
+        localStorage.removeItem("title")
+        localStorage.setItem("title", `${arrayGifosTitulos[posicionActual]}`)
+    });
+   
+    gifo2.addEventListener("click", () => {
+        localStorage.removeItem("nameImg")
+        localStorage.setItem("nameImg", `${arrayGifosName[posicionActual + 1]}`)
+
+        localStorage.removeItem("title")
+        localStorage.setItem("title", `${arrayGifosTitulos[posicionActual + 1]}`)
+    });
+   
+    gifo3.addEventListener("click", () => {
+        localStorage.removeItem("nameImg")
+        localStorage.setItem("nameImg", `${arrayGifosName[posicionActual + 2]}`)
+
+        localStorage.removeItem("title")
+        localStorage.setItem("title", `${arrayGifosTitulos[posicionActual + 2]}`)
+    });
+
+    // localStorage.setItem("img1", `${gifo1.src}`)
+    // localStorage.setItem("img2", `${gifo2.src}`)
+    // localStorage.setItem("img3", `${gifo3.src}`)
+
+}

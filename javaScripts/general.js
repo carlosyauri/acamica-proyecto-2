@@ -75,7 +75,6 @@ async function menu() {
         arrayGifos = [];
         let nuevo = await ponerGifo();
 
-        console.log(nuevo)
         nuevo.data.forEach(element => {
             arrayGifos.push(element.images.downsized.url);
         });

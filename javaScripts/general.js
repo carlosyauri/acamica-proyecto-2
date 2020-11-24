@@ -1,5 +1,6 @@
 
 
+
 let body = document.querySelector("body")
 let nocturno = document.getElementById("nocturno")
 let logoNoc = document.getElementById("logoNoc");
@@ -19,6 +20,7 @@ nocturno.addEventListener("click", () => {
 
 
     if (localStorage.getItem("nocturno-mode") == "true") {
+
         logoNoc.src = "assets/logo-mobile-modo-noct.svg"
         iconSearch.src = "assets/icon-search-modo-noct.svg"
         // btnGifos.src = "assets/CTA-crar-gifo-modo-noc.svg"
@@ -105,6 +107,7 @@ async function menu() {
             localStorage.removeItem("nameImg")
 
             localStorage.setItem("img", `${gifo1.src}`)
+            localStorage.setItem("fav", `${gifo1.src}`)
             localStorage.setItem("nameImg", `${arrayGifosName[0]}`)
             localStorage.setItem("title", `${arrayGifosTitulos[0]}`)
         });
@@ -114,6 +117,7 @@ async function menu() {
             localStorage.removeItem("nameImg")
 
             localStorage.setItem("img", `${gifo2.src}`)
+            localStorage.setItem("fav", `${gifo2.src}`)
             localStorage.setItem("nameImg", `${arrayGifosName[1]}`)
             localStorage.setItem("title", `${arrayGifosTitulos[1]}`)
         });
@@ -123,6 +127,7 @@ async function menu() {
             localStorage.removeItem("nameImg")
 
             localStorage.setItem("img", `${gifo3.src}`)
+            localStorage.setItem("fav", `${gifo3.src}`)
             localStorage.setItem("nameImg", `${arrayGifosName[2]}`)
             localStorage.setItem("title", `${arrayGifosTitulos[2]}`)
         });
@@ -195,8 +200,5 @@ function cambiarImagen(numero) {
         localStorage.setItem("title", `${arrayGifosTitulos[posicionActual + 2]}`)
     });
 
-    // localStorage.setItem("img1", `${gifo1.src}`)
-    // localStorage.setItem("img2", `${gifo2.src}`)
-    // localStorage.setItem("img3", `${gifo3.src}`)
 
 }

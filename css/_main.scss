@@ -17,6 +17,51 @@
     margin-bottom: 0px;
 }
 
+
+/////////////////////    FAVORITOS    //////////////////////// 
+
+
+.divFav {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 7px;
+    margin-top: 5px;
+}
+
+
+
+#sector-1 #h1Fav{
+    
+    height: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #572EE5;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 0px;
+    margin-bottom: 46px;
+
+}
+
+
+#sinFav {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#sinFav p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #50E3C2;
+    text-align: center;
+    line-height: 33px;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+// ///////////////////////////
+
 .gifos {
     color: #50E3C2;
 }
@@ -129,12 +174,16 @@
 .sector-3 .conteinerGifos {
 
     display: flex;
- 
+
     flex-wrap: nowrap;
     flex-direction: row;
 
     overflow: hidden;
     width: 100%;
+
+    @media screen and (min-width: 710px) {
+        justify-content: center;
+    }
 
 }
 

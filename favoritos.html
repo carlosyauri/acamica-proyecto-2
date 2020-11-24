@@ -40,26 +40,33 @@
     </header>
     <main>
         <section id="sector-1">
-            <h1>Inspírate, busca, guarda, y crea los mejores<span class="gifos"> GIFOS</span></h1>
-            <img src="/assets/ilustra_header.svg" alt="ilustra" class="ilustra">
-            <div class="bordeBusqueda">
+
+            <div class="divFav">
+                <img src="/assets/icon-favoritos.svg" alt="" id="imgFav">
+            </div>
+            <div class="h1FavDiv">
+                <h1 id="h1Fav">Favoritos</h1>
+            </div>
+
+            <!-- DIV OCULTO -->
+            <div class="bordeBusqueda" style="display: none;">
                 <input type="text" name="realbox" id="input" placeholder="Busca GIFOS y más">
                 <img src="/assets/icon-search.svg" alt="lupa" id="icon-search">
             </div>
             <div id="divContainer"></div>
+            <!-- DIV OCULTO -->
+
         </section>
         <section id="sector-resultados">
             <div> <span id="lineaArriba"></span> </div>
             <h1 id="h1"></h1>
             <div class="sector-resultados">
                 <div id="resultados"></div>
+                <div id="sinFav"></div>
             </div>
             <div id="verMas"></div>
         </section>
-        <section id="sector-2">
-                <h2>Trending:</h2>
-                <p>Reations, Enternaiment, Sport, Stickers, Artists</p>
-        </section>
+
         <section class="sector-3">
             <h2>Trending GIFOS</h2>
             <p>Mira los últimos <span>GIFOS de nuestra comunidad.</span></p>
@@ -99,8 +106,8 @@
         <div class="parte-3"></div>
     </footer>
 
+    <script src="/javaScripts/scriptFavoritos.js"></script>
     <script src="/javaScripts/general.js"></script>
     <script src="/javaScripts/scriptIndex.js"></script>
-
 </body>
 </html> 

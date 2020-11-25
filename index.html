@@ -40,13 +40,22 @@
     </header>
     <main>
         <section id="sector-1">
-            <h1>Inspírate, busca, guarda, y crea los mejores<span class="gifos"> GIFOS</span></h1>
-            <img src="/assets/ilustra_header.svg" alt="ilustra" class="ilustra">
-            <div class="bordeBusqueda">
-                <input type="text" name="realbox" id="input" placeholder="Busca GIFOS y más">
-                <img src="/assets/icon-search.svg" alt="lupa" id="icon-search">
+            <div class="uno">
+                <h1>Inspírate, busca, guarda, y crea los mejores<span class="gifos"> GIFOS</span></h1>
+                <img src="/assets/ilustra_header.svg" alt="ilustra" class="ilustra" id="ilustra">
             </div>
-            <div id="divContainer"></div>
+            <div class="bordeBusqueda" id="bordeInput">
+                <div class="inputGral">
+                    <div class="inputEspecifico" id="inputEspecifico">
+                        <img src="" alt="" id="lupaBusqueda">
+                        <input type="text" name="realbox" id="input" placeholder="Busca GIFOS y más">
+                    </div>
+                    <img src="/assets/icon-search.svg" alt="lupa" id="icon-search">
+                </div>
+                <div id="divLinea"><span id="lineaSugerencia"></span></div>
+                <div id="divContainer"></div>
+            </div>
+            
         </section>
         <section id="sector-resultados">
             <div> <span id="lineaArriba"></span> </div>

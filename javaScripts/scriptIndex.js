@@ -21,9 +21,25 @@ input.addEventListener("input", async (e) => {
 
 
     if ( textoIngresado.length == " "){
+        let lupaBusqueda = document.getElementById("lupaBusqueda")
+        lupaBusqueda.src = ""
+
+        let lineaSugerencia = document.getElementById("lineaSugerencia")
+        lineaSugerencia.classList.remove("lineaSugerencia")
+
         lupita.src = "assets/icon-search.svg"
+        let bordeInput = document.getElementById("bordeInput")
+        bordeInput.classList.add("bordeBusqueda")
+        bordeInput.classList.remove("bordeBusquedaActivo")
         return;
     }
+
+    let lupaBusqueda = document.getElementById("lupaBusqueda")
+    lupaBusqueda.src = "assets/icon-search-copia.svg"
+
+    let lineaSugerencia = document.getElementById("lineaSugerencia")
+    lineaSugerencia.classList.add("lineaSugerencia")
+
 
     //Creando div de sugerencia
     let divContainer = document.getElementById("divContainer")
@@ -44,24 +60,38 @@ input.addEventListener("input", async (e) => {
 
     
     if(arrayTitle.length == 0) return;
-    arrayTitle.forEach(element => {
 
-        if(element.toLowerCase().includes(textoIngresado.toLowerCase())){
+    bordeInput.classList.remove("bordeBusqueda")
+    bordeInput.classList.add("bordeBusquedaActivo")
+
+    for (let i = 0 ; i < 4; i++){
+
+        if(arrayTitle[i].toLowerCase().includes(textoIngresado.toLowerCase())){
             
             let elementoLista = document.createElement("div")
             div.appendChild(elementoLista)
-            elementoLista.innerHTML = `${element}`
+            elementoLista.innerHTML = arrayTitle[i]
 
             elementoLista.addEventListener("click", () => {
 
                 input.value = elementoLista.innerText;
                 lupita.src = "assets/icon-search.svg"
 
+                let bordeInput = document.getElementById("bordeInput")
+                bordeInput.classList.add("bordeBusqueda")
+                bordeInput.classList.remove("bordeBusquedaActivo")
+
+                let lineaSugerencia = document.getElementById("lineaSugerencia")
+                lineaSugerencia.classList.remove("lineaSugerencia")
+
+                let lupaBusqueda = document.getElementById("lupaBusqueda")
+                lupaBusqueda.src = ""
+
                 buscador();
 
             })
         }
-    })
+    }
 
 });
 

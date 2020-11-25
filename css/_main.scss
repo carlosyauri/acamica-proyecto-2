@@ -17,6 +17,11 @@
     margin-bottom: 0px;
 }
 
+#sector-1 .uno {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /////////////////////    FAVORITOS    //////////////////////// 
 
@@ -60,6 +65,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
+.expNoc {
+    background: none;
+}
 // ///////////////////////////
 
 .gifos {
@@ -71,6 +79,10 @@
     margin-bottom: 0px;
     width: 273px;
     height: 130px;
+    @media screen and (min-width: 710px) {
+        width: 399px;
+        height: 190px;
+    }
 }
 
 
@@ -83,15 +95,59 @@
     background: transparent;
     border: 1px solid #572EE5;
     border-radius: 27px;
+
+    @media screen and (min-width: 710px) {
+        width: 551px;
+    }
 }
 
-.bordeBusqueda input{
+.bordeBusquedaActivo {
+
+    flex-wrap: wrap;
+    background: transparent;
+    border: 1px solid #572EE5;
+    border-radius: 27px;
+    width: 90%;
+    height: 200px;
+
+    @media screen and (min-width: 710px) {
+        width: 551px;
+    }
+
+}
+
+
+.inputGral {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.bordeBusquedaActivo .inputGral {
+    margin-top: 15px
+}
+
+.bordeBusquedaActivo .inputEspecifico {
+    margin-left: 21px;
+}
+
+.inputGral input {
     font-size: 16px;
     border: none;
     outline: none;
     background: none;
-    text-align: center;
+    margin-left: 13px;
+}
 
+.inputEspecifico{
+    display: flex;
+}
+
+
+#icon-search{
+    margin-right: 20px;
 }
 
 #resultados {
@@ -102,6 +158,38 @@
         grid-template-columns: 1fr 1fr;
         column-gap: 10px;
         row-gap: 15px;
+}
+
+
+.div-segerencia {
+    color: #9cafc3;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    text-align: left;
+    line-height: 30px;
+}
+
+#divLinea {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#divContainer {
+    margin-left: 22px;
+}
+.lineaSugerencia {
+ 
+    opacity: 0.5;
+    border: 1px solid #9CAFC3;
+
+    display: flex;
+    width: 505px;
+    height: 0.1px;
+
+    position: relative;
+    z-index: 1;
+
 }
 
 #h1 {

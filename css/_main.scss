@@ -114,7 +114,7 @@
     border: 1px solid #572EE5;
     border-radius: 27px;
     width: 90%;
-    height: 200px;
+    height: 100%;
 
     @media screen and (min-width: 769px) {
         max-width: 49%;
@@ -128,7 +128,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 10px;
+    // margin-top: 10px;
 }
 
 .bordeBusquedaActivo .inputGral {
@@ -176,12 +176,54 @@
 }
 
 
+#divHouver {
+    margin-top: -204px;
+    max-width: 260px;
+    height: 201px;
+    position: absolute;
+    width: 49%; 
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#idImgHouver {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    margin-top: 10px;
+    display: inline;
+}
+
+// .idImgHouverActivo {
+
+//     width: 32px;
+//     height: 32px;
+//     margin-right: 10px;
+//     margin-top: 10px;
+//     display: none;
+// }
+
+
+#divHouver:hover {
+    background: #572EE5 90%;
+    opacity: 0.6;
+}
+
+
+// .classHouver {
+//     background: #572EE5 90%;
+//     opacity: 0.6;
+// }
+
 .div-segerencia {
     color: #9cafc3;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     text-align: left;
     line-height: 30px;
+    margin-top: 14px;
+    margin-bottom: 18px;
+    padding-left: 2.5%;
 }
 
 #divLinea {
@@ -190,21 +232,26 @@
     justify-content: center;
 }
 
-#divContainer {
-    margin-left: 22px;
-}
 .lineaSugerencia {
  
     opacity: 0.5;
     border: 1px solid #9CAFC3;
 
     display: flex;
-    width: 505px;
+    width: 90%;
     height: 0.1px;
 
     position: relative;
     z-index: 1;
 
+    @media screen and (min-width: 769px){
+        width: 95%;
+    }
+
+}
+
+#imgSug {
+    margin-right: 2.5%;
 }
 
 
@@ -216,7 +263,7 @@
     line-height: 30px;
 }
 
-.sector-resultados #resultados img {
+.sector-resultados #resultados #resultados-img {
     width: 260px;
     height: 200px;
 }

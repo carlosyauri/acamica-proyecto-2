@@ -20,7 +20,8 @@ input.addEventListener("input", async (e) => {
     lupita.src = "assets/close.svg"
 
 
-    if ( textoIngresado.length == " "){
+    if ( textoIngresado.length == ""){
+
         let lupaBusqueda = document.getElementById("lupaBusqueda")
         lupaBusqueda.src = ""
 
@@ -74,12 +75,15 @@ input.addEventListener("input", async (e) => {
             let elementoLista = document.createElement("div")
             let is = document.createElement("img")
             is.src = "./assets/icon-search-copia.svg"
+            is.id = "imgSug"
             elementoLista.appendChild(is)
             let spanTexto = document.createElement("span")
             spanTexto.innerHTML =  arrayTitle[i]
             elementoLista.appendChild(spanTexto)
 
             div.appendChild(elementoLista)
+
+            g();
 
             elementoLista.addEventListener("click", () => {
 
@@ -124,11 +128,23 @@ function cerrarLista(x) {
 
 let cerrarLupa = document.getElementById("icon-search");
 cerrarLupa.addEventListener("click", () => {
+
+    
+    let lupaBusqueda = document.getElementById("lupaBusqueda")
+    lupaBusqueda.src = ""
+
+    let lineaSugerencia = document.getElementById("lineaSugerencia")
+    lineaSugerencia.classList.remove("lineaSugerencia")
+
+    bordeInput.classList.add("bordeBusqueda")
+    bordeInput.classList.remove("bordeBusquedaActivo")
+
+    input.value = ""
+
     
     if (cerrarLupa.src = "assets/close.svg") {
         cerrarLista("#divBorrar")
         cerrarLupa.src = "assets/icon-search.svg"
-        input.value = " ";
     }
 
 })
@@ -138,6 +154,15 @@ cerrarLupa.addEventListener("click", () => {
 
 input.addEventListener("keypress", (event) => {
 
+    let lupaBusqueda = document.getElementById("lupaBusqueda")
+    lupaBusqueda.src = ""
+
+    let lineaSugerencia = document.getElementById("lineaSugerencia")
+    lineaSugerencia.classList.remove("lineaSugerencia")
+
+    bordeInput.classList.add("bordeBusqueda")
+    bordeInput.classList.remove("bordeBusquedaActivo")
+
     event.keyCode
     if (event.keyCode == 13){
         buscador ()
@@ -145,22 +170,88 @@ input.addEventListener("keypress", (event) => {
 
 })
 
+
+function g (){
+    input.addEventListener("keypress", (e) => {
+        e.keyCode
+        if (e.keyCode == 46){
+
+            let lupaBusqueda = document.getElementById("lupaBusqueda")
+            lupaBusqueda.src = ""
+
+            let lineaSugerencia = document.getElementById("lineaSugerencia")
+            lineaSugerencia.classList.remove("lineaSugerencia")
+
+            bordeInput.classList.add("bordeBusqueda")
+            bordeInput.classList.remove("bordeBusquedaActivo")
+        }
+    })
+}
+
+
 function buscador (){
     
         cerrarLista("#idMas")
         cerrarLista("#resultados-img");
 
         let resultados = document.getElementById("resultados");
-        let h1 = document.getElementById("h1")
-        h1.innerHTML = input.value;
+        let h2 = document.getElementById("h1")
+        h2.innerHTML = input.value;
 
         for ( let i = 0; i < arrayGifs.length ; i++){
+
+            let divResultados = document.createElement("div")
             let img = document.createElement("img")
             img.src = arrayGifs[i];
             img.alt = "img"
             img.id = "resultados-img"
-            resultados.appendChild(img)
+
+            let divHouver = document.createElement("div")
+            divHouver.id = "divHouver"
+
+            let img1 = document.createElement("img")
+            let img2 = document.createElement("img")
+            let img3 = document.createElement("img")
+
+            img1.id = "idImgHouver"
+            img2.id = "idImgHouver"
+            img3.id = "idImgHouver"
+
+            img1.src = "./assets/icon-fav.svg"
+            img2.src = "./assets/icon-download.svg"
+            img3.src = "./assets/icon-max-normal.svg"
+
+            divHouver.appendChild(img3)
+            divHouver.appendChild(img2)
+            divHouver.appendChild(img1)
+            
+            divResultados.appendChild(img)
+            divResultados.appendChild(divHouver)
+            resultados.appendChild(divResultados)
         }
+
+
+        // let dh = document.getElementById("divHouver");
+        // dh.addEventListener("mouseover", () =>{
+        //     let imghover = document.getElementById("idImgHouver")
+        //     imghover.className = ""
+        // })
+        // let divHouver = document.getElementById("divHouver")
+        
+        // divHouver.addEventListener("mouseover", () => {
+        //     divHouver.classList.add("classHouver")
+
+        // });
+
+        // divHouver.addEventListener("mouseout", () => {
+        //     divHouver.classList.remove("classHouver")
+        // });
+
+        // function func1(){
+        //     divHouver.classList.remove("classHouver")
+        // }
+
+
 
         // BOTON VER MAS
 

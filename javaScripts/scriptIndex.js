@@ -49,6 +49,7 @@ input.addEventListener("input", async (e) => {
     divContainer.appendChild(div) 
 
 
+
     let arrayCompletado =  await autoCompletar(textoIngresado, num)
     arrayTitle = []
     arrayGifs = []
@@ -66,11 +67,19 @@ input.addEventListener("input", async (e) => {
 
     for (let i = 0 ; i < 4; i++){
 
+
         if(arrayTitle[i].toLowerCase().includes(textoIngresado.toLowerCase())){
             
+
             let elementoLista = document.createElement("div")
+            let is = document.createElement("img")
+            is.src = "./assets/icon-search-copia.svg"
+            elementoLista.appendChild(is)
+            let spanTexto = document.createElement("span")
+            spanTexto.innerHTML =  arrayTitle[i]
+            elementoLista.appendChild(spanTexto)
+
             div.appendChild(elementoLista)
-            elementoLista.innerHTML = arrayTitle[i]
 
             elementoLista.addEventListener("click", () => {
 

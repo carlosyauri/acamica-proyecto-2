@@ -72,7 +72,7 @@ async function descargaGif(url) {
     a.href = window.URL.createObjectURL(file);
     a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
     a.click();
-
+    
 }
 
 

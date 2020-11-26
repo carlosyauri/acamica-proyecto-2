@@ -2,6 +2,11 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    @media screen and (min-width: 769px){
+        width: 1440px;
+        margin: 0 auto;
+    }
+  
 }
 
 #sector-1 h1 {
@@ -17,7 +22,7 @@
     margin-bottom: 0px;
 }
 
-#sector-1 .uno {
+.uno {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,7 +84,7 @@
     margin-bottom: 0px;
     width: 273px;
     height: 130px;
-    @media screen and (min-width: 710px) {
+    @media screen and (min-width: 769px) {
         width: 399px;
         height: 190px;
     }
@@ -96,9 +101,10 @@
     border: 1px solid #572EE5;
     border-radius: 27px;
 
-    @media screen and (min-width: 710px) {
-        width: 551px;
+    @media screen and (min-width: 769px) {
+        max-width: 49%;
     }
+
 }
 
 .bordeBusquedaActivo {
@@ -110,8 +116,8 @@
     width: 90%;
     height: 200px;
 
-    @media screen and (min-width: 710px) {
-        width: 551px;
+    @media screen and (min-width: 769px) {
+        max-width: 49%;
     }
 
 }
@@ -148,6 +154,15 @@
 
 #icon-search{
     margin-right: 20px;
+}
+
+
+#sector-resultados {
+
+    @media screen and (min-width: 769px){
+        width: 1440px;
+        margin: 0 auto;
+    }
 }
 
 #resultados {
@@ -192,6 +207,7 @@
 
 }
 
+
 #h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 35px;
@@ -221,10 +237,16 @@
 }
 
 
+
 #sector-2 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
+    @media screen and (min-width: 769px){
+        width: 1440px;
+        margin: 0 auto;
+    }
 }
 
 #sector-2 h2 {
@@ -257,6 +279,11 @@
     .bodyNocturno & {
         background: #222326;
     }
+
+    @media screen and (min-width: 769px){
+        width: 1440px;
+        margin: 0 auto;
+    }
 }
 
 .sector-3 .conteinerGifos {
@@ -269,7 +296,7 @@
     overflow: hidden;
     width: 100%;
 
-    @media screen and (min-width: 710px) {
+    @media screen and (min-width: 769px) {
         justify-content: center;
     }
 

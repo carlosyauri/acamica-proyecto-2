@@ -1,6 +1,17 @@
 .container-header {
     display: flex;
     justify-content: space-between;
+    // @media screen and (min-width: 769px){
+    //     width: 1440px;
+    //     margin: 0 auto;
+    // }
+}
+
+header{
+    @media screen and (min-width: 769px){
+        width: 1440px;
+        margin: 0 auto;
+    }
 }
 
 .logo {
@@ -95,6 +106,8 @@
 input[type="checkbox"]:checked ~ ul {
     height: 100%;
     position: fixed;
+
+    
 }
 
 input[type="checkbox"]:checked ~ label span {

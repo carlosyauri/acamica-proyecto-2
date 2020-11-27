@@ -369,17 +369,25 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
           flex-direction: row-reverse;
 }
 
-#idImgHouver {
+#idImgHouver1,
+#idImgHouver2,
+#idImgHouver3 {
   width: 32px;
   height: 32px;
   margin-right: 10px;
   margin-top: 10px;
-  display: inline;
+  display: none;
 }
 
 #divHouver:hover {
   background: #572EE5 90%;
   opacity: 0.6;
+}
+
+#divHouver:hover #idImgHouver1,
+#divHouver:hover #idImgHouver2,
+#divHouver:hover #idImgHouver3 {
+  display: inline;
 }
 
 .div-segerencia {

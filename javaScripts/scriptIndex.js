@@ -4,6 +4,7 @@
 
 let arrayTitle ;
 let arrayGifs ;
+let arrayGifosNames ;
 let arrayVerMas ; 
 let num = 0;
 let arrayCompletado ;
@@ -54,9 +55,11 @@ input.addEventListener("input", async (e) => {
     let arrayCompletado =  await autoCompletar(textoIngresado, num)
     arrayTitle = []
     arrayGifs = []
+    arrayGifosNames = []
     arrayCompletado.data.forEach(element => {
         arrayTitle.push(element.title);
-        arrayGifs.push(element.images.downsized.url)
+        arrayGifs.push(element.images.downsized.url);
+        arrayGifosNames.push(element.username);
     })            
 
 
@@ -86,6 +89,7 @@ input.addEventListener("input", async (e) => {
             g();
 
             elementoLista.addEventListener("click", () => {
+
 
                 input.value = elementoLista.innerText;
                 lupita.src = "assets/icon-search.svg"
@@ -192,7 +196,7 @@ function g (){
 function buscador (){
     
         cerrarLista("#idMas")
-        cerrarLista("#resultados-img");
+        cerrarLista("#divResultados");
 
         let resultados = document.getElementById("resultados");
         let h2 = document.getElementById("h1")
@@ -201,6 +205,7 @@ function buscador (){
         for ( let i = 0; i < arrayGifs.length ; i++){
 
             let divResultados = document.createElement("div")
+            divResultados.id = "divResultados"
             let img = document.createElement("img")
             img.src = arrayGifs[i];
             img.alt = "img"
@@ -209,13 +214,14 @@ function buscador (){
             let divHouver = document.createElement("div")
             divHouver.id = "divHouver"
 
+
             let img1 = document.createElement("img")
             let img2 = document.createElement("img")
             let img3 = document.createElement("img")
 
-            img1.id = "idImgHouver"
-            img2.id = "idImgHouver"
-            img3.id = "idImgHouver"
+            img1.id = "idImgHouver1"
+            img2.id = "idImgHouver2"
+            img3.id = "idImgHouver3"
 
             img1.src = "./assets/icon-fav.svg"
             img2.src = "./assets/icon-download.svg"
@@ -228,29 +234,91 @@ function buscador (){
             divResultados.appendChild(img)
             divResultados.appendChild(divHouver)
             resultados.appendChild(divResultados)
+
+
+            ////////////////////// EVENTO FAVORITOS //////////////////////////////
+
+            img1.addEventListener("mouseover", () => {
+                img1.src = "./assets/icon-fav-hover.svg"
+            });
+
+            img1.addEventListener("mouseout", () => {
+                img1.src = "./assets/icon-fav.svg"
+            });
+
+            img1.addEventListener("click", (e) => {
+
+                console.log(e)
+
+
+                if(localStorage.getItem("arrayFav")){
+                    let arrayFav = localStorage.getItem("arrayFav")
+                    arrayFav = JSON.parse(arrayFav)
+            
+                    arrayFav.push(arrayGifs[i])
+                    localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
+                    img1.src = "./assets/icon-fav-active.svg"
+            
+                }else{
+            
+                    let arrayFav = []
+                    arrayFav.push(arrayGifs[i])
+                    localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
+                    img1.src = "./assets/icon-fav-active.svg"
+                }  
+            })
+
+            //////////////////////////////////////////////////////////////////////
+            ///////////////////////   EVENTO DESCARGA   //////////////////////////
+
+            img2.addEventListener("mouseover", () => {
+                img2.src = "./assets/icon-download-hover.svg"
+            });
+
+            img2.addEventListener("mouseout", () => {
+                img2.src = "./assets/icon-download.svg"
+            });
+
+            img2.addEventListener("click", (e) => {
+
+                descargaGif(arrayGifs[i])
+
+            })
+
+            //////////////////////////////////////////////////////////////////////
+            ///////////////////////   EVENTO EXPANDIR   //////////////////////////
+
+            img3.addEventListener("mouseover", (e) => {
+                img3.src = "./assets/icon-max-hover.svg"
+
+                localStorage.setItem("img", `${arrayGifs[i]}`)
+                localStorage.setItem("nameImg", `${arrayGifosNames[i]}`)
+                localStorage.setItem("title", `${arrayTitle[i]}`)
+                
+
+                let a = document.createElement("a")
+                a.appendChild(img3)
+                divHouver.appendChild(a)
+                divHouver.appendChild(img2)
+                divHouver.appendChild(img1)
+                a.href = "expandir.html"
+
+            });
+
+            img3.addEventListener("mouseout", () => {
+                img3.src = "./assets/icon-max-normal.svg"
+            });
+
+            img3.addEventListener("click", () => {
+
+                a.href = "expandir.html"
+
+            })
+
+            //////////////////////////////////////////////////////////////////////
+            
+
         }
-
-
-        // let dh = document.getElementById("divHouver");
-        // dh.addEventListener("mouseover", () =>{
-        //     let imghover = document.getElementById("idImgHouver")
-        //     imghover.className = ""
-        // })
-        // let divHouver = document.getElementById("divHouver")
-        
-        // divHouver.addEventListener("mouseover", () => {
-        //     divHouver.classList.add("classHouver")
-
-        // });
-
-        // divHouver.addEventListener("mouseout", () => {
-        //     divHouver.classList.remove("classHouver")
-        // });
-
-        // function func1(){
-        //     divHouver.classList.remove("classHouver")
-        // }
-
 
 
         // BOTON VER MAS
@@ -284,7 +352,17 @@ function buscador (){
         })
 
         cerrarLista("#divBorrar");
-        // return false;    
-
+        
 }
 
+async function descargaGif(url) {
+
+    let a = document.createElement('a');
+    let response = await fetch(url);
+    let file = await response.blob();
+    a.download = 'myGif-proyecto';
+    a.href = window.URL.createObjectURL(file);
+    a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
+    a.click();
+    
+}

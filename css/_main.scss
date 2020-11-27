@@ -186,12 +186,14 @@
     flex-direction: row-reverse;
 }
 
-#idImgHouver {
+#idImgHouver1,
+#idImgHouver2,
+#idImgHouver3{
     width: 32px;
     height: 32px;
     margin-right: 10px;
     margin-top: 10px;
-    display: inline;
+    display: none;
 }
 
 // .idImgHouverActivo {
@@ -207,6 +209,14 @@
 #divHouver:hover {
     background: #572EE5 90%;
     opacity: 0.6;
+
+    #idImgHouver1,
+    #idImgHouver2,
+    #idImgHouver3{
+
+    display: inline;
+}
+
 }
 
 

@@ -202,3 +202,9 @@ function cambiarImagen(numero) {
 
 
 }
+
+
+// let idTranding = document.getElementById("containerGifosID");
+// idTranding.addEventListener("scroll", () => {
+//     cambiarImagen(1);
+// })

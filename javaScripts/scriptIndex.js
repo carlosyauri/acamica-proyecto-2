@@ -238,20 +238,23 @@ function buscador (){
 
             ////////////////////// EVENTO FAVORITOS //////////////////////////////
 
-            img1.addEventListener("mouseover", () => {
-                img1.src = "./assets/icon-fav-hover.svg"
-            });
+            if (img1.src === "./assets/icon-fav.svg"){
+        
+                img1.addEventListener("mouseover", () => {
+                    img1.src = "./assets/icon-fav-hover.svg"
+                });
+    
+                img1.addEventListener("mouseleave", () => {
+                    img1.src = "./assets/icon-fav.svg"
+                });
 
-            img1.addEventListener("mouseout", () => {
-                img1.src = "./assets/icon-fav.svg"
-            });
+            }
 
-            img1.addEventListener("click", (e) => {
 
-                console.log(e)
-
+            img1.addEventListener("click", () => {
 
                 if(localStorage.getItem("arrayFav")){
+                    
                     let arrayFav = localStorage.getItem("arrayFav")
                     arrayFav = JSON.parse(arrayFav)
             
@@ -265,8 +268,14 @@ function buscador (){
                     arrayFav.push(arrayGifs[i])
                     localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
                     img1.src = "./assets/icon-fav-active.svg"
-                }  
+                }
+
             })
+
+
+
+
+           
 
             //////////////////////////////////////////////////////////////////////
             ///////////////////////   EVENTO DESCARGA   //////////////////////////

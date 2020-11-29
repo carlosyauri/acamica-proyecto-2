@@ -102,6 +102,10 @@ header{
 }
 
 
+.imgCrearGifo{
+    display: none;
+}
+
 
 input[type="checkbox"]:checked ~ ul {
     height: 100%;
@@ -124,3 +128,101 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
     transform: rotate(-45deg) translate(1px, -2px);
 }
 
+
+@media screen and (min-width:769px){
+
+    .menu {
+
+        margin-top: 18px;
+        margin-bottom: 38px;
+        margin-right: 156px;
+    }
+    
+    .menu .span1{
+            display: none;
+    }
+
+    .menu ul .spanli{
+        display: none;
+    }
+    .container-header {
+
+        height: 90px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav {
+        margin: 0px;
+        height: 0px;
+    }
+
+    .logo{
+        margin-left: 156px;
+        margin-top: 18px;
+        margin-bottom: 13px;
+        width: 59px;
+        height: 59px;
+    }
+    
+    .nav .menu ul {
+        position: relative;
+        list-style: none;
+        height: 54px;
+        background: #FFFFFF;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-right: 0px;
+        flex-direction: row;
+
+    }
+    
+    .nav .menu ul li {
+        display: inline-block;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 1rem;
+        letter-spacing: 0;
+        line-height: 28px;
+        padding: 0px;
+        width: 100%;
+
+        
+    }
+
+    .nav .menu ul li a{
+        text-decoration-line: none;
+        padding: 0px 0%;
+        line-height: 0px;
+        margin-right: 0px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+        color: #572EE5;
+        letter-spacing: 0;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        width: 140px;
+
+    }
+
+    .icon-nav1 {
+        margin: 0px;
+    }
+
+    .nav .menu ul a .imgCrearGifo{
+        height: 51px;
+        max-width: none;
+        display: inline;
+
+    }
+//     .nav ul li a:hover {
+//         color: #00f3bb;
+//         text-decoration: line-through;
+//     }
+//     .nav ul li a:active {
+//         color: rgba(6,10,36,0.56);
+//         text-decoration: line-through;
+//     }
+
+
+}

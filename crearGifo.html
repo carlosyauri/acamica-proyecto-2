@@ -13,75 +13,76 @@
 
 </head>
 <body>
-    
-    <header>
-        <div class="parte-3"></div>
-        <div class="container-header">
-            <div class="logo">
-                <a href="index.html"><img src="/assets/logo-mobile.svg" alt="logo" id="logoNoc"></a>
-            </div>
-            <nav class="nav">
-                <div class="menu">
-                    <input type="checkbox" id="checkbox">
-                    <label for="checkbox">
-                    <span class="span1"></span>
-                    <span class="span1"></span>
-                    <span class="span1"></span>
-                    </label>
-                    <ul>
-                        <li><a class="icon-nav1" id="nocturno" href="#">Modo Nocturno</a></li>
-                        <span class="spanli"></span>
-                        <li><a class="icon-nav2" id="favoritos" href="favoritos.html">Favoritos</a></li>
-                        <span class="spanli"></span>
-                        <li><a class="icon-nav3" id="misGifos" href="misGifos.html">Mis GIFOS</a></li>
-                        <span class="spanli"></span>
-                    </ul>
+    <header> 
+        <div class="lineaArribaAbajo"></div>
+            <div class="container-header">
+                <div class="logo">
+                    <a href="index.html"><img src="/assets/logo-mobile.svg" alt="logo" id="logoNoc"></a>
                 </div>
-            </nav>
-        </div>
-    </header>
+                <nav class="nav">
+                    <div class="menu">
+                        <input type="checkbox" id="checkbox">
+                        <label for="checkbox">
+                        <span class="span1"></span>
+                        <span class="span1"></span>
+                        <span class="span1"></span>
+                        </label>
+                        <ul>
+                            <li><a class="icon-nav1" id="nocturno" href="#">Modo Nocturno</a></li>
+                            <span class="spanli"></span>
+                            <li><a class="icon-nav2" id="favoritos" href="favoritos.html">Favoritos</a></li>
+                            <span class="spanli"></span>
+                            <li><a class="icon-nav3" id="misGifos" href="misGifos.html">Mis GIFOS</a></li>
+                            <span class="spanli"></span>
+                            <a href="./crearGifo.html"> <img src="/assets/button-crear-gifo.svg" alt="" class="imgCrearGifo"> </a>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
     <main>
         <section class="section">
             <div class="contenedor">
-                <video controls autoplay playsinline class="video" id="video"></video>   
+                <video controls autoplay playsinline class="video" id="video"></video>  
+                <img src="#" id="imagen" class="desaparecer" alt="">
+                <div class="fondo-gifo" id="div-fondo">
+                    <img src="./assets/loader.svg" class="img-loader" alt="" id="imgLoader">
+                    <p id="p-subiendo" class="p-subir-gifo">Estamos subiendo tu GIFO</p>
+                </div>
+
                 <h1 id="titulo">Aquí podrás crear tus propios <span>GIFOS</span></h1>
                 <p id="parrafo">¡Crea tu GIFO en sólo 3 pasos! <span>(sólo necesitas una cámara para grabar un video)</span></p>
             </div>
             
-        <img src="assets/camara.svg" alt="icono de una cámara" class="icono-camara">
-        <img src="assets/element-luz-camara.svg" alt="" class="luz-camara">
+        <img src="./assets/camara.svg" alt="icono de una cámara" class="icono-camara">
+        <img src="./assets/element-luz-camara.svg" alt="" class="luz-camara">
         
         </section>
         <section class="seccion-grabar">   
         <div>
             <div class="paso-a-paso">    
                                     
-                <img src="./assets/paso-a-paso-1.svg" alt=""  id="uno">
-                <img src="./assets/paso-a-paso-2.svg" alt="" id="btnInicio">
+                <img src="./assets/paso-a-paso-1.svg" alt=""  id="btnInicio">
+                <img src="./assets/paso-a-paso-2.svg" alt="" id="dos">
                 <img src="./assets/paso-a-paso-3.svg" alt="" id="tres">
-                <img src="./assets/pelicula.svg" alt="imagen de una cinta">
+                <img src="./assets/pelicula.svg" alt="imagenDeUnaCinta" >
                
             </div>  
 
             <div class="linea-divisoria"></div>
 
             <div class="btn-comenzar">
-                <img src="./assets/CTA-comenzar.svg" alt="imagen-btn" id="comenzar">
-  
+
+                <button type="button" id="comenzar">COMENZAR</button>
+                <button type="button" id="btnRecord" class="desaparecer">GRABAR</button>
+                <button type="button" id="btnStop" class="desaparecer">FINALIZAR</button>
+                <button type="button" id="btnUpload" class="desaparecer">SUBIR GIFO</button>
+
             </div>
 
         </div>
         </section>       
-        <div>
-        
-            <button type="button" id="btnStop">detener grabacion</button>
-        
-            <button type="button" id="btnRecord">iniciar grabacion</button>
-        
-            <button type="button" id="btnUpload">Subir gifo</button>
-        
-        
-        </div>
+ 
     </main>
     <footer class="footer"> 
         <div class="parte-1">
@@ -96,8 +97,12 @@
                 © GIFOS 2020 All Rights Reserverd.
         </div>
         <div class="parte-3"></div>
+
     </footer>
+    <div class="lineaArribaAbajo"></div>
+
+
     <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
-    <script src="javaScripts/crearGifo.js"></script>
+    <script src="./javaScripts/crearGifos.js"></script>
 </body>
 </html>

@@ -3,13 +3,12 @@ footer {
     @media screen and (min-width: 769px) {
         display: flex;
         justify-content: space-between;
+
+        width: 1440px;
+        margin: 0 auto;
+
     }
 }
-
-
-
-
-
 
 
 footer p {
@@ -28,19 +27,13 @@ footer p {
 }
 
 
-footer .parte-1, .parte-2{
-
-    @media screen and (min-width: 769px) {
-        margin-top: 49px;
-        margin-bottom: 51px;
-    }
-}
-
 footer .parte-1 {
 
     text-align: center;
 
     @media screen and (min-width: 769px) {
+        margin-top: 49px;
+        margin-bottom: 51px;
         height: 25px;
         margin-left: 156px;
     }
@@ -95,8 +88,11 @@ footer .parte-1 ul li a{
     @media screen and (min-width:769px){
 
         margin-right: 158px;
+        // margin-right: -500px;
         font-size: 13px;  
-        height: 17px;
+        height: 25px;
+        margin-top: 49px;
+        margin-bottom: 51px;
     }
 
     
@@ -104,14 +100,9 @@ footer .parte-1 ul li a{
 .lineaArribaAbajo {
     background: #572EE5;
     height: 5px;
-}
-
-
-@media screen and (min-width: 769px){
-    footer {
+    @media screen and(min-width: 769px) {
         width: 1440px;
         margin: 0 auto;
     }
 }
-
 

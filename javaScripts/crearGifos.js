@@ -5,75 +5,43 @@ let btnUpload = document.getElementById('btnUpload');
 let form;
 let video = document.getElementById("video")
 let comenzar = document.getElementById("comenzar")
-
-// let modoDark = document.querySelector("#btnDark");
-// let body = document.querySelector("body");
-// let logoNocturno = document.getElementById("logo-noc");
-
-
-
-let uno = document.getElementById("uno");
-let tres = document.getElementById("tres");
+let h1 = document.getElementById("titulo")
+let p = document.getElementById("parrafo")
+let imagen = document.getElementById("imagen")
+let divFondo = document.getElementById("div-fondo")
+let pSubiendo = document.getElementById("p-subiendo")
+let imgLoader = document.getElementById("imgLoader")
 
 
 comenzar.addEventListener("click", () => {
+
     h1.innerHTML = "¿Nos das acceso a tu cámara?";
     p.innerHTML = "El acceso a tu camara será válido sólo por el tiempo en el que estés creando el GIFO.";
-    uno.src = "./assets/paso-a-paso-hover-1.svg";
     comenzar.classList.add("sacar-texto")
   
 })
 
-
-var recorder; // globally accessible
-let h1 = document.getElementById("titulo")
-let p = document.getElementById("parrafo")
-let btnImg = document.getElementById("")
-let grabar;
-let subirGifo;
-let finalizar;
-
+//inicio
 btnStart.addEventListener('click', () => {
-
+    btnRecord.classList.remove("desaparecer")
+    
+   
+    btnStart.src ="./assets/paso-a-paso-hover-1.svg";
     video.classList.add("video-activo")
     video.classList.remove("video")
     h1.classList.add("sacar-texto")
     p.classList.add("sacar-texto")
-    btnStart.src = "./assets/paso-a-paso-hover-2.svg"
-    uno.src = "./assets/paso-a-paso-1.svg"
-    comenzar.classList.remove("sacar-texto")
-    comenzar.src = "./assets/CTA-grabar.svg"
-    comenzar.id = "grabar"
-    grabar = document.getElementById("grabar")
-
-    grabar.addEventListener("click", () => {
-            
-        comenzar.classList.remove("sacar-texto")
-        uno.src = "./assets/paso-a-paso-1.svg"
-        grabar.src = "./assets/CTA-finalizar.svg"
-        grabar.id = "finalizar"
-
-        finalizar = document.getElementById("finalizar")
-
-        finalizar.addEventListener("click", () => {
-    
-            finalizar.src = "./assets/CTA-subir-gifo.svg"
-            finalizar.id = "subir-gifo"
-            
-    
-        })
-    });
-
    
-
-
+   
 
     btnStop.disabled = true;
     captureCamera((camera) => {
-       
+        //video.muted = true;
+        //video.volume = 0;
         video.srcObject = camera;
 
         video.play();
+
 
         recorder = RecordRTC(camera, {
             type: 'gif',
@@ -85,13 +53,34 @@ btnStart.addEventListener('click', () => {
                 console.log('grabacion iniciada')
             },
         });
-
         recorder.camera = camera
+      
     });
 }); 
 
+//grabo
+    btnRecord.addEventListener('click', () => {
+
+        btnRecord.classList.add("desaparecer")
+        btnStop.classList.remove("desaparecer")
+        recorder.startRecording();
+        btnStop.disabled = false;
+    });
+
+//finalizo
+    btnStop.addEventListener('click', () => {
+
+        video.classList.add("desaparecer")
+        imagen.classList.remove("desaparecer")
 
 
+        btnStop.classList.add("desaparecer")
+        btnUpload.classList.remove("desaparecer")
+        btnStop.disabled = true;
+        recorder.stopRecording(stopRecordingCallback);
+        console.log("fin de grabacion")
+    } )
+    
 
 function captureCamera(callback) {
     navigator.mediaDevices.getUserMedia({ 
@@ -107,46 +96,40 @@ function captureCamera(callback) {
     });
 }
 
-
-
 function stopRecordingCallback() {
     
-    
+   
     video.src = video.srcObject = null;
     video.muted = false;
     video.volume = 1;
     let blob = recorder.getBlob();
     video.src = URL.createObjectURL(blob);
-    
+  
+    imagen.src = URL.createObjectURL(blob);
+    console.log(video.src)
     
     form = new FormData();
     form.append('file', blob, 'myGif.gif');
     console.log("ESTE ES EL FILE!!!!", form.get('file'));
     
+   
     recorder.camera.stop();
     recorder.destroy();
     recorder = null;
 }
 
+var recorder; // globally accessible
 
-
-btnRecord.addEventListener('click', () => {
-    
-    recorder.startRecording();
-    btnStop.disabled = false;
-});
-
-
-btnStop.addEventListener('click', () => {
-    btnStop.disabled = true;
-    recorder.stopRecording(stopRecordingCallback);
-} )
-
-
+//subir gifo
 btnUpload.addEventListener('click', () => {
+
+    divFondo.classList.add("subiendo-gifo")
+    divFondo.classList.remove("fondo-gifo")
+
     
+   
     // enviar gifo.
-    fetch("http://upload.giphy.com/v1/gifs?api_key=YaOhho0nfvtDv9KxcBH64ng3iVX6VW9a", 
+    fetch("https://upload.giphy.com/v1/gifs?api_key=8YMF2nldhRgghMtWCUlXoxfY0hlGDFPL", 
     {
         method: 'POST',
         body: form
@@ -154,7 +137,7 @@ btnUpload.addEventListener('click', () => {
     .then(res => res.json())
     .then(res => {
 
-
+        localStorage.setItem("idGifos", res.data.id)
         console.log("fin del envio!!", res);
     })
     .catch(err => {
@@ -163,5 +146,3 @@ btnUpload.addEventListener('click', () => {
 
 
 } )
-
-

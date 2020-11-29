@@ -1,12 +1,51 @@
+footer {
+
+    @media screen and (min-width: 769px) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+
+
+
+
+
 footer p {
     color: #000000;
     font-family: 'Roboto', sans-serif;
     margin-top: 47px;
     margin-bottom: 0;
+    font-size: 15px;
+
+    @media screen and (min-width: 769px) {
+        display: inline;
+        font-size: 13px;
+        margin-top: 47px;
+        letter-spacing: 0;
+    }
 }
-.parte-1, .parte-2 {
+
+
+footer .parte-1, .parte-2{
+
+    @media screen and (min-width: 769px) {
+        margin-top: 49px;
+        margin-bottom: 51px;
+    }
+}
+
+footer .parte-1 {
+
     text-align: center;
+
+    @media screen and (min-width: 769px) {
+        height: 25px;
+        margin-left: 156px;
+    }
 }
+
 
 footer .parte-1 ul {
     padding: 0;
@@ -14,6 +53,11 @@ footer .parte-1 ul {
     margin-top: 22px;
     margin-bottom: 46px;
 
+    @media screen and (min-width: 769px) {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: 17px;
+    }
     
 }
 footer .parte-1 ul li{
@@ -21,6 +65,12 @@ footer .parte-1 ul li{
     font-size: 20px;
     letter-spacing: 0;
     line-height: 28px;
+
+    @media screen and (min-width: 769px) {
+        font-size: 16px;
+
+    }
+    
 
 }
 
@@ -40,6 +90,16 @@ footer .parte-1 ul li a{
     letter-spacing: 0;
     line-height: 20px;
     margin-bottom: 23px;
+    text-align: center;
+
+    @media screen and (min-width:769px){
+
+        margin-right: 158px;
+        font-size: 13px;  
+        height: 17px;
+    }
+
+    
 }
 .lineaArribaAbajo {
     background: #572EE5;
@@ -53,3 +113,5 @@ footer .parte-1 ul li a{
         margin: 0 auto;
     }
 }
+
+

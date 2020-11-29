@@ -929,15 +929,50 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   margin-top: 37px;
 }
 
+@media screen and (min-width: 769px) {
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 footer p {
   color: #000000;
   font-family: 'Roboto', sans-serif;
   margin-top: 47px;
   margin-bottom: 0;
+  font-size: 15px;
 }
 
-.parte-1, .parte-2 {
+@media screen and (min-width: 769px) {
+  footer p {
+    display: inline;
+    font-size: 13px;
+    margin-top: 47px;
+    letter-spacing: 0;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  footer .parte-1, .parte-2 {
+    margin-top: 49px;
+    margin-bottom: 51px;
+  }
+}
+
+footer .parte-1 {
   text-align: center;
+}
+
+@media screen and (min-width: 769px) {
+  footer .parte-1 {
+    height: 25px;
+    margin-left: 156px;
+  }
 }
 
 footer .parte-1 ul {
@@ -947,11 +982,25 @@ footer .parte-1 ul {
   margin-bottom: 46px;
 }
 
+@media screen and (min-width: 769px) {
+  footer .parte-1 ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 17px;
+  }
+}
+
 footer .parte-1 ul li {
   display: inline;
   font-size: 20px;
   letter-spacing: 0;
   line-height: 28px;
+}
+
+@media screen and (min-width: 769px) {
+  footer .parte-1 ul li {
+    font-size: 16px;
+  }
 }
 
 footer .parte-1 ul li a {
@@ -970,6 +1019,15 @@ footer .parte-1 ul li a {
   letter-spacing: 0;
   line-height: 20px;
   margin-bottom: 23px;
+  text-align: center;
+}
+
+@media screen and (min-width: 769px) {
+  .parte-2 {
+    margin-right: 158px;
+    font-size: 13px;
+    height: 17px;
+  }
 }
 
 .lineaArribaAbajo {

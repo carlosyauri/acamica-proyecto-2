@@ -11,6 +11,11 @@ let imagen = document.getElementById("imagen")
 let divFondo = document.getElementById("div-fondo")
 let pSubiendo = document.getElementById("p-subiendo")
 let imgLoader = document.getElementById("imgLoader")
+let iconoDescarga = document.getElementById("icono-descarga")
+let iconoLink = document.getElementById("icono-link")
+
+let dos = document.getElementById("dos")
+let tres = document.getElementById("tres")
 
 
 comenzar.addEventListener("click", () => {
@@ -65,6 +70,9 @@ btnStart.addEventListener('click', () => {
         btnStop.classList.remove("desaparecer")
         recorder.startRecording();
         btnStop.disabled = false;
+
+        btnStart.src = "./assets/paso-a-paso-1.svg";
+        dos.src = "./assets/paso-a-paso-hover-2.svg"
     });
 
 //finalizo
@@ -123,8 +131,12 @@ var recorder; // globally accessible
 //subir gifo
 btnUpload.addEventListener('click', () => {
 
-    divFondo.classList.add("subiendo-gifo")
-    divFondo.classList.remove("fondo-gifo")
+    divFondo.classList.add("subiendo-gifo");
+    divFondo.classList.remove("fondo-gifo");
+    dos.src = "./assets/paso-a-paso-2.svg"
+    tres.src ="./assets/paso-a-paso-hover-3.svg"
+
+    btnUpload.classList.add("desaparecer");
 
     
    
@@ -139,10 +151,48 @@ btnUpload.addEventListener('click', () => {
 
         localStorage.setItem("idGifos", res.data.id)
         console.log("fin del envio!!", res);
+        pSubiendo.innerHTML = "GIFO subido con éxito"
+        imgLoader.src = "./assets/ok.svg"
+        divGifos.classList.remove("desaparecer")
+
+        iconoLink.addEventListener("click", () =>{
+            copiarAlPortapapeles(`${video.src}`)
+        })
+
+
+        iconoDescarga.addEventListener("click", () => {
+            downloadGif(`${video.src}`)
+        })
+
+
+
     })
+
+
     .catch(err => {
         console.log("error.!!!", err);
     })
 
 
 } )
+
+function copiarAlPortapapeles(url) {
+    var aux = document.createElement("input");
+    aux.setAttribute("value", url);
+    document.body.appendChild(aux);
+    aux.select();
+    document.execCommand("copy");
+    document.body.removeChild(aux);
+}
+
+async function descargaGif(url) {
+
+    let a = document.createElement('a');
+    let response = await fetch(url);
+    let file = await response.blob();
+    a.download = 'myGif-proyecto';
+    a.href = window.URL.createObjectURL(file);
+    a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
+    a.click();
+    
+}

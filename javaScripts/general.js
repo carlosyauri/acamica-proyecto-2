@@ -1,6 +1,4 @@
 
-
-
 let body = document.querySelector("body")
 let nocturno = document.getElementById("nocturno")
 let logoNoc = document.getElementById("logoNoc");

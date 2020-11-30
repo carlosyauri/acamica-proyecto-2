@@ -858,20 +858,22 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   font-size: 15px;
   color: #FFFFFF;
   text-align: center;
-  margin-top: 157px;
+  margin-top: 0px;
 }
 
 .subiendo-gifo {
   display: inline-block;
-  width: 458px;
-  height: 305px;
+  width: 462px;
+  height: 308px;
   position: relative;
   background: rgba(87, 46, 229, 0.7);
-  top: -309px;
+  top: -312px;
   margin-left: 97px;
 }
 
 .img-loader {
+  margin-left: 215px;
+  margin-top: 130px;
   width: 22px;
 }
 
@@ -1004,6 +1006,15 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
 
 .sacar-texto {
   display: none;
+}
+
+#div-iconos {
+  margin-left: 363px;
+  margin-top: 15px;
+}
+
+.icon-gifos:first-child {
+  margin-right: 10px;
 }
 
 @media screen and (min-width: 769px) {

@@ -11,6 +11,7 @@ let imagen = document.getElementById("imagen")
 let divFondo = document.getElementById("div-fondo")
 let pSubiendo = document.getElementById("p-subiendo")
 let imgLoader = document.getElementById("imgLoader")
+let divGifos = document.getElementById("div-iconos")
 let iconoDescarga = document.getElementById("icono-descarga")
 let iconoLink = document.getElementById("icono-link")
 
@@ -87,7 +88,64 @@ btnStart.addEventListener('click', () => {
         btnStop.disabled = true;
         recorder.stopRecording(stopRecordingCallback);
         console.log("fin de grabacion")
+    })
+
+//subir gifo
+btnUpload.addEventListener('click', () => {
+
+    divFondo.classList.add("subiendo-gifo");
+    divFondo.classList.remove("fondo-gifo");
+    dos.src = "./assets/paso-a-paso-2.svg"
+    tres.src ="./assets/paso-a-paso-hover-3.svg"
+    btnUpload.classList.add("desaparecer");
+
+    // enviar gifo.
+    fetch("https://upload.giphy.com/v1/gifs?api_key=8YMF2nldhRgghMtWCUlXoxfY0hlGDFPL",{
+        method: 'POST',
+        body: form
+    })
+        .then(res => res.json())
+        .then(res => {
+
+            if(localStorage.getItem("arrayId")) {
+                let arrayId = localStorage.getItem("arrayId")
+                 arrayId = JSON.parse(arrayId)
+                 arrayId.push(res.data.id)
+                 localStorage.setItem("arrayId", JSON.stringify(arrayId))
+ 
+            } else {
+                 let arrayId  = [];
+                 arrayId.push(res.data.id)
+                 localStorage.setItem("arrayId", JSON.stringify(arrayId))
+            }
+
+
+            console.log("fin del envio!!", res);
+            pSubiendo.innerHTML = "GIFO subido con éxito"
+            imgLoader.src = "./assets/ok.svg"
+            divGifos.classList.remove("desaparecer")
+
+            iconoLink.addEventListener("click", () =>{
+                copiarAlPortapapeles(`${video.src}`)
+                iconoLink.src = "./assets/icon-link-hover.svg"
+            })
+
+
+            iconoDescarga.addEventListener("click", () => {
+                downloadGif(`${video.src}`)
+                iconoDescarga.src = "./assets/icon-download-hover.svg"
+            })
+
+        })
+
+
+        .catch(err => {
+            console.log("error.!!!", err);
+        })
+
+
     } )
+
     
 
 function captureCamera(callback) {
@@ -128,53 +186,6 @@ function stopRecordingCallback() {
 
 var recorder; // globally accessible
 
-//subir gifo
-btnUpload.addEventListener('click', () => {
-
-    divFondo.classList.add("subiendo-gifo");
-    divFondo.classList.remove("fondo-gifo");
-    dos.src = "./assets/paso-a-paso-2.svg"
-    tres.src ="./assets/paso-a-paso-hover-3.svg"
-
-    btnUpload.classList.add("desaparecer");
-
-    
-   
-    // enviar gifo.
-    fetch("https://upload.giphy.com/v1/gifs?api_key=8YMF2nldhRgghMtWCUlXoxfY0hlGDFPL", 
-    {
-        method: 'POST',
-        body: form
-    })
-    .then(res => res.json())
-    .then(res => {
-
-        localStorage.setItem("idGifos", res.data.id)
-        console.log("fin del envio!!", res);
-        pSubiendo.innerHTML = "GIFO subido con éxito"
-        imgLoader.src = "./assets/ok.svg"
-        divGifos.classList.remove("desaparecer")
-
-        iconoLink.addEventListener("click", () =>{
-            copiarAlPortapapeles(`${video.src}`)
-        })
-
-
-        iconoDescarga.addEventListener("click", () => {
-            downloadGif(`${video.src}`)
-        })
-
-
-
-    })
-
-
-    .catch(err => {
-        console.log("error.!!!", err);
-    })
-
-
-} )
 
 function copiarAlPortapapeles(url) {
     var aux = document.createElement("input");
@@ -185,7 +196,7 @@ function copiarAlPortapapeles(url) {
     document.body.removeChild(aux);
 }
 
-async function descargaGif(url) {
+async function downloadGif(url) {
 
     let a = document.createElement('a');
     let response = await fetch(url);
@@ -196,3 +207,66 @@ async function descargaGif(url) {
     a.click();
     
 }
+
+
+
+// MODO NOCTURNO
+// let modoDark = document.querySelector("#btnDark");
+// let body = document.querySelector("body");
+// let logoNocturno = document.getElementById("logo-noc");
+// let camara = document.getElementById("camara")
+// let pelicula = document.getElementById("pelicula")
+
+// function modoNocturno() {
+
+//     modoDark.addEventListener("click", () => {
+//         let dark = document.body.classList.toggle("dark");
+
+//         //acá guardo la clase en modo nocturno
+//         if (dark) {
+//             localStorage.setItem("dark-mode", "true");
+
+//         } else {
+//             localStorage.setItem("dark-mode", "false");
+//         }
+//         //acá obtengo el estado actual en el que estamos navegando
+//         if (localStorage.getItem("dark-mode") == "true") {
+
+//             logoNocturno.src = "assets/logo-mobile-modo-noct.svg"
+//             modoDark.innerHTML = "modo diurno"
+//             camara.src = "./assets/camara-modo-noc.svg"
+//             pelicula.src = "./assets/pelicula-modo-noc.svg"
+            
+//         }
+//         else {
+            
+//             logoNocturno.src = "./assets/logo-mobile.svg"
+//             modoDark.innerHTML = "modo nocturno"
+//             camara.src = "./assets/camara.svg"
+//             pelicula.src = "./assets/pelicula.svg"
+            
+            
+            
+//         }
+//     });
+    
+//     if (localStorage.getItem("dark-mode") == "true") {
+//         document.body.classList.add("dark");
+//         logoNocturno.src = "./assets/logo-mobile-modo-noct.svg"
+//         camara.src = "./assets/camara-modo-noc.svg"
+//         pelicula.src = "./assets/pelicula-modo-noc.svg"
+        
+//         modoDark.innerHTML = "modo diurno"
+        
+        
+//     } else {
+//         document.body.classList.remove("dark");
+//         logoNocturno.src = "./assets/logo-mobile.svg"
+//         camara.src = "./assets/camara.svg"
+//         pelicula.src = "./assets/pelicula.svg"
+//         modoDark.innerHTML = "modo nocturno"
+        
+//     }
+// }
+
+// modoNocturno();

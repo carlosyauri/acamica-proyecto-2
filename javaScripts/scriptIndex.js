@@ -10,6 +10,7 @@ let num = 0;
 let arrayCompletado ;
 let textoIngresado;
 
+
 let input = document.getElementById("input")
 input.addEventListener("input", async (e) => {
     
@@ -254,19 +255,44 @@ function buscador (){
             img1.addEventListener("click", () => {
 
                 if(localStorage.getItem("arrayFav")){
+
+                    // OBTENGO DATOS DEL LOCAL STORAGE Y CONVIERTO
                     
                     let arrayFav = localStorage.getItem("arrayFav")
                     arrayFav = JSON.parse(arrayFav)
+
+                    let arrayFavNom = localStorage.getItem("arrayFavNom")
+                    arrayFavNom = JSON.parse(arrayFavNom)
             
+                    let arrayFavTittle = localStorage.getItem("arrayFavTittle")
+                    arrayFavTittle = JSON.parse(arrayFavTittle)
+
+
+
                     arrayFav.push(arrayGifs[i])
+                    arrayFavNom.push(arrayGifosNames[i])
+                    arrayFavTittle.push(arrayTitle[i])
+
                     localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
+                    localStorage.setItem("arrayFavNom", JSON.stringify(arrayFavNom));
+                    localStorage.setItem("arrayFavTittle", JSON.stringify(arrayFavTittle));
+                    
                     img1.src = "./assets/icon-fav-active.svg"
             
                 }else{
             
                     let arrayFav = []
+                    let arrayFavNom = []
+                    let arrayFavTittle = []
+
                     arrayFav.push(arrayGifs[i])
+                    arrayFavNom.push(arrayGifosNames[i])
+                    arrayFavTittle.push(arrayTitle[i])
+
                     localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
+                    localStorage.setItem("arrayFavNom", JSON.stringify(arrayFavNom));
+                    localStorage.setItem("arrayFavTittle", JSON.stringify(arrayFavTittle));
+
                     img1.src = "./assets/icon-fav-active.svg"
                 }
 

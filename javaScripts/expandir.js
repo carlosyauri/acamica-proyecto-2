@@ -7,6 +7,10 @@ let a = localStorage.getItem("img")
 let name = localStorage.getItem("nameImg")
 let titulo = localStorage.getItem("title")
 
+
+////////////////////////////////////////
+//////////// CAMBIAR IMG, USER Y TITULO
+
 // IMAGEN
 let divImg123 = document.getElementById("ImgExp");
 let img = document.createElement("img");
@@ -39,16 +43,40 @@ btnFav.addEventListener("click", () => {
         let arrayFav = localStorage.getItem("arrayFav")
         arrayFav = JSON.parse(arrayFav)
 
-        let fav = localStorage.getItem("fav")
-        arrayFav.push(`${fav}`)
-        localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
+        let arrayFavNom = localStorage.getItem("arrayFavNom")
+        arrayFavNom = JSON.parse(arrayFavNom)
 
+        let arrayFavTittle = localStorage.getItem("arrayFavTittle")
+        arrayFavTittle = JSON.parse(arrayFavTittle)
+
+        let fav = localStorage.getItem("fav")
+        let name = localStorage.getItem("nameImg")
+        let titulo = localStorage.getItem("title")
+
+
+        arrayFav.push(`${fav}`)
+        arrayFavNom.push(`${name}`)
+        arrayFavTittle.push(`${titulo}`)
+        localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
+        localStorage.setItem("arrayFavNom", JSON.stringify(arrayFavNom));
+        localStorage.setItem("arrayFavTittle", JSON.stringify(arrayFavTittle));
+        
     }else{
 
         let arrayFav = []
+        let arrayFavNom = []
+        let arrayFavTittle = []
         let fav = localStorage.getItem("fav")
+        let name = localStorage.getItem("nameImg")
+        let titulo = localStorage.getItem("title")
+
+
         arrayFav.push(`${fav}`)
+        arrayFavNom.push(`${name}`)
+        arrayFavTittle.push(`${titulo}`)
         localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
+        localStorage.setItem("arrayFavNom", JSON.stringify(arrayFavNom));
+        localStorage.setItem("arrayFavTittle", JSON.stringify(arrayFavTittle));
     }  
 });
 

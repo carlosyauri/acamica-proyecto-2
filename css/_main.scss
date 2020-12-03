@@ -172,6 +172,7 @@
 #sector-resultados {
 
     @media screen and (min-width: 769px){
+        
         width: 1440px;
         margin: 0 auto;
     }
@@ -183,10 +184,22 @@
         display: grid;
         justify-items: center;
         grid-template-columns: 1fr 1fr;
-        column-gap: 10px;
-        row-gap: 15px;
+        column-gap: 21px;
+        row-gap: 25px;
+
+        @media screen and(min-width: 769px){
+            
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            column-gap: 29px;
+            row-gap: 35px;
+
+        }
 }
 
+#divResultados img {
+    width: 260px;
+    height: 200px;
+}
 
 #divHouver {
     margin-top: -204px;
@@ -197,6 +210,8 @@
     display: flex;
     flex-direction: row-reverse;
 }
+
+
 
 #idImgHouver1,
 #idImgHouver2,
@@ -272,9 +287,25 @@
     line-height: 30px;
 }
 
-.sector-resultados #resultados #resultados-img {
-    width: 260px;
-    height: 200px;
+.sector-resultados #resultados img {
+    width: 156px;
+    height: 120px;
+
+    @media screen and(min-width: 769px){
+        width: 260px;
+        height: 200px;
+    }
+}
+
+.sector-resultados #resultados #divResultados #divHouver img {
+    width: 32px;
+    height: 32px;
+}
+.sector-resultados {
+
+        display: flex;
+        justify-content: center;
+
 }
 
 .linea {
@@ -285,6 +316,7 @@
 #verMas {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 #verMas img {
@@ -383,7 +415,7 @@
 .sector-3 .imgDiv img {
     max-width: 243px;
     height: 187px;
-    // padding: 10px;
+    margin-left: 22px;
 
 
     @media screen and(min-width: 769px){

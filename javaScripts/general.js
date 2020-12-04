@@ -10,10 +10,9 @@ nocturno.addEventListener("click", () => {
     let dark = document.body.classList.toggle("bodyNocturno")
 
     if(dark) {
-    localStorage.setItem("nocturno-mode", "true");
-
+        localStorage.setItem("nocturno-mode", "true");
     }else {
-    localStorage.setItem("nocturno-mode", "false");
+        localStorage.setItem("nocturno-mode", "false");
     }
 
 
@@ -33,7 +32,7 @@ nocturno.addEventListener("click", () => {
     }
 
 
-    });
+});
 
     if(localStorage.getItem("nocturno-mode") == "true") {
         document.body.classList.add("bodyNocturno");

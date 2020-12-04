@@ -16,11 +16,11 @@ if ( `${arrayFav}` == "null") {
     let divImg = document.getElementById("sinFav");
     let img = document.createElement("img");
     img.id = "sinResultado"
-    img.src = "/assets/icon-busqueda-sin-resultado.svg";
-    divImg.appendChild(img);
-
+    img.src = "/assets/icon-busqueda-sin-resultado.svg"
     let p = document.createElement("p")
     p.innerHTML = "¡Guarda tu primer GIFO en Favoritos para que se muestre aquí!";
+
+    divImg.appendChild(img)
     divImg.appendChild(p)
 
 }else {

@@ -3,7 +3,7 @@ let arrayId = localStorage.getItem("arrayId")
 arrayId = JSON.parse(arrayId)
 
 
-if (arrayObtenidos == "null"){
+if (arrayObtenidos == "null" || arrayObtenidos.length == 0){
 
     let divImg = document.getElementById("sinFav");
     let img = document.createElement("img");

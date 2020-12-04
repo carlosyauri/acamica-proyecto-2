@@ -327,6 +327,7 @@ function buscador (){
                 img3.src = "./assets/icon-max-hover.svg"
 
                 localStorage.setItem("img", `${arrayGifs[i]}`)
+                localStorage.setItem("fav", `${arrayGifs[i]}`)
                 localStorage.setItem("nameImg", `${arrayGifosNames[i]}`)
                 localStorage.setItem("title", `${arrayTitle[i]}`)
                 

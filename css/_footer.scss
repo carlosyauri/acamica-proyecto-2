@@ -18,6 +18,10 @@ footer p {
     margin-bottom: 0;
     font-size: 15px;
 
+    .bodyNocturno & {
+        color: #FFFFFF;
+    }
+
     @media screen and (min-width: 769px) {
         display: inline;
         font-size: 13px;
@@ -70,6 +74,10 @@ footer .parte-1 ul li{
 footer .parte-1 ul li a{
     text-decoration: none;
     color: #CDD6E0;
+
+    // .bodyNocturno & {
+    //     color: #FFFFFF;
+    // }
 }
 
 .icon-footer {
@@ -84,6 +92,10 @@ footer .parte-1 ul li a{
     line-height: 20px;
     margin-bottom: 23px;
     text-align: center;
+
+    .bodyNocturno & {
+        color: #FFFFFF;
+    }
 
     @media screen and (min-width:769px){
 
@@ -100,6 +112,10 @@ footer .parte-1 ul li a{
 .lineaArribaAbajo {
     background: #572EE5;
     height: 5px;
+
+    .bodyNocturno & {
+        background: #000000;
+    }
     @media screen and(min-width: 769px) {
         width: 1440px;
         margin: 0 auto;

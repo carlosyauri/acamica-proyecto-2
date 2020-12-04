@@ -11,10 +11,9 @@ let titulo = localStorage.getItem("title")
 //////////// CAMBIAR IMG, USER Y TITULO
 
 // IMAGEN
-let divImg123 = document.getElementById("ImgExp");
-let img = document.createElement("img");
+let img = document.getElementById("ImgExp");
 img.src = `${a}`;
-divImg123.appendChild(img)
+
 
 // USER NAME
 

@@ -1,3 +1,6 @@
+///////////////////////////////////////////////////////////////////
+///////////////////////// SECTOR 1 ////////////////////////////////
+
 #sector-1 {
     display: flex;
     justify-content: center;
@@ -21,6 +24,11 @@
     margin-top: 7px;
     margin-bottom: 0px;
 
+    .bodyNocturno & {
+        color: #FFFFFF;
+    }
+
+
     @media screen and (min-width:769px){
         width: 60%;
         margin-top: 76px;
@@ -39,7 +47,9 @@
     align-items: center;
 }
 
-/////////////////////    FAVORITOS    //////////////////////// 
+
+////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////// FAVORITOS  ///////////////////////////////////////////
 
 
 .divFav {
@@ -87,7 +97,7 @@
     text-align: center;
     line-height: 33px;
 }
-
+////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
 
 .expNoc {
@@ -111,6 +121,8 @@
     }
 }
 
+//////////////////////////////////////////////////////////////////////////
+///////////////////////// SECTOR BUSQUEDA ////////////////////////////////
 
 .bordeBusqueda {
     display: flex;
@@ -121,6 +133,11 @@
     background: transparent;
     border: 1px solid #572EE5;
     border-radius: 27px;
+
+    .bodyNocturno & {
+
+        border: 1px solid #FFFFFF;
+    }
 
     @media screen and (min-width: 769px) {
         max-width: 49%;
@@ -176,6 +193,10 @@
 #icon-search{
     margin-right: 20px;
 }
+
+
+///////////////////////////////////////////////////////////////////
+///////////////////// SECTOR RESULTADOS   /////////////////////////
 
 
 #sector-resultados {
@@ -333,7 +354,8 @@
     margin-bottom: 79px;
 }
 
-
+///////////////////////////////////////////////////////////////////
+///////////////////////// SECTOR 2 ////////////////////////////////
 
 #sector-2 {
     display: flex;
@@ -353,8 +375,12 @@
     color: #572EE5;
     text-align: center;
     line-height: 25px;
-
     margin-bottom: 2px;
+
+    .bodyNocturno & {
+        color: #FFFFFF;
+    }
+
     @media screen and (min-width:769px){
 
         margin-top: 53px;
@@ -376,6 +402,10 @@
     text-align: center;
     line-height: 25px; 
 
+    .bodyNocturno & {
+        color: #FFFFFF;
+    }
+
     @media screen and (min-width:769px){
 
         font-size: 16px;
@@ -385,6 +415,9 @@
 
     }
 }
+
+///////////////////////////////////////////////////////////////////
+///////////////////////// SECTOR 3 ////////////////////////////////
 
 .sector-3 {
     display: flex;
@@ -471,6 +504,10 @@
     text-align: center;
     line-height: 30px;
 
+    .bodyNocturno & {
+        color: #FFFFFF;
+    }
+
     @media screen and(min-width: 769px){
         font-weight: bold;
         font-size: 25px;
@@ -486,6 +523,10 @@
     color: #000000;
     text-align: center;
     line-height: 23px;
+
+    .bodyNocturno & {
+        color: #FFFFFF;
+    }
 
     @media screen and(min-width: 769px){
         font-size: 18px;
@@ -517,22 +558,48 @@
     
 }
 
-.imgExpandir img {
-    // position: absolute;
-    display: block;
-    margin-top: 73px;
-    width: 80%;
-    height: 260px;
+.gral #ImgExp {
+    width: 75%;
+    height: 245px;
+
+    @media screen and (min-width:769px){
+        width: 695px;
+        height: 385px;
+    }
 }
 
 #cerrarExp{
 
-    margin-top: -30px;
-    margin-left: 317px;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 82%;
+    @media screen and(min-width: 769px){
+        margin-top: 8%;
+        margin-top: 5%;
+    }
+    
+}
+#cerrar {
+    margin-top: -3%;
+    position: absolute;
+    @media screen and(min-width: 769px){
+        margin-top: 0px;
+    }
 }
 
 .gral {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+
+}
+
+.logoExp {
+    @media screen and(min-width: 769px){
+        display: none;
+    }
 }
 
 #h1Exp{
@@ -556,18 +623,35 @@
     margin-bottom: 0px;
 }
 
+
+#total {
+    margin-top: 15%;
+    display: flex;
+    justify-content: center;
+    @media screen and(min-width:769px){
+        margin-top: 8%;
+    }
+}
+
 .partesAll {
-    margin-top: 0px;
     display: flex;
     justify-content: space-between;
-    padding-right: 32px;
-    padding-left: 40px;
+    height: 100%;
+    position: absolute;
+    margin-top: 250px;
+    width: 75%;
+
+    @media screen and(min-width:769px){
+        width: 695px;
+        margin-top: 390px;
+    }
 }
 
 
 .parte2 {
     margin-top: 17px;
-    margin-left: -8px;
+    width: 72px;
+    
 }
 .parte1 {
     width: 80%

@@ -326,6 +326,10 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   margin-bottom: 46px;
 }
 
+.bodyNocturno #sector-1 #h1Fav {
+  color: #FFFFFF;
+}
+
 @media screen and (min-width: 769px) {
   #sector-1 #h1Fav {
     margin-right: 86px;
@@ -556,13 +560,47 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
 }
 
 #divLinea {
-  margin-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.divLinea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 35px;
+}
+
+@media screen and (min-width: 769px) {
+  .divLinea {
+    margin-top: 55px;
+    margin-bottom: 81px;
+  }
+}
+
+.lineaAparecer {
+  opacity: 0.5;
+  border: 1px solid #9CAFC3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 45%;
+  height: 0.1px;
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (min-width: 769px) {
+  .lineaAparecer {
+    width: 30%;
+  }
 }
 
 .lineaSugerencia {
@@ -593,6 +631,8 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   color: #572EE5;
   text-align: center;
   line-height: 30px;
+  margin-bottom: 59px;
+  margin-top: 0px;
 }
 
 .bodyNocturno #h1 {

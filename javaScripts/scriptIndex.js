@@ -193,6 +193,7 @@ function g (){
     })
 }
 
+// let divLinea = document.getElementById("divLinea")
 
 function buscador (){
     
@@ -202,6 +203,11 @@ function buscador (){
         let resultados = document.getElementById("resultados");
         let h2 = document.getElementById("h1")
         h2.innerHTML = input.value;
+        
+        // divLinea.classList.add("divLinea")
+
+        let lineaArriba = document.getElementById("lineaArriba");
+        lineaArriba.classList.add("lineaAparecer")
 
         for ( let i = 0; i < arrayGifs.length ; i++){
 

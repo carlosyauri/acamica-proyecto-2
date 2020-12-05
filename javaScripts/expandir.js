@@ -40,10 +40,42 @@ des.classList.add("imgDeExp")
 btnFav.classList.add("imgDeExp")
 
 
+
+btnFav.addEventListener("mouseover", () => {
+    btnFav.src = "./assets/icon-fav-hover.svg"
+})
+
+
+btnFav.addEventListener("mouseout", () => {
+    btnFav.src = "./assets/icon-fav.svg"
+})
+
+des.addEventListener("mouseover", () => {
+    des.src = "./assets/icon-download-hover.svg"
+})
+
+
+des.addEventListener("mouseout", () => {
+    des.src = "./assets/icon-download.svg"
+})
+
+
+
 btnFav.addEventListener("click", () => {
 
     btnFav.src = "./assets/icon-fav-active.svg"
     btnFav.id = "favActive"
+
+
+    btnFav.addEventListener("mouseover", () => {
+        btnFav.src = "./assets/icon-fav-active.svg"
+    })
+    
+    
+    btnFav.addEventListener("mouseout", () => {
+        btnFav.src = "./assets/icon-fav-active.svg"
+    })
+
     btnFav.classList.remove("imgDeExp")
 
     if(localStorage.getItem("arrayFav")){
@@ -87,6 +119,7 @@ btnFav.addEventListener("click", () => {
     }  
 });
 
+
 ///////////////////////////////////////////////////////////////////////////////////
 
 // BOTON DE DESCARGA
@@ -109,6 +142,10 @@ async function descargaGif(url) {
     a.click();
     
 }
+
+
+
+
 
 
 /////////////////////////////////////////// MODO NOCTURNO

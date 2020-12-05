@@ -25,17 +25,26 @@ p.innerHTML = `${name}`;
 let h1 = document.getElementById("h1Exp")
 h1.innerHTML = `${titulo}`;
 
+
+
 ///////////////////////////////////////////////////////////////////////////////////
 
 
 // GUARDAR ARRAY DE FAVORITOS EN LOCALSTORAGE
 
 
+let des = document.getElementById("descarga")
 let btnFav = document.getElementById("favorito")
+
+des.classList.add("imgDeExp")
+btnFav.classList.add("imgDeExp")
 
 
 btnFav.addEventListener("click", () => {
 
+    btnFav.src = "./assets/icon-fav-active.svg"
+    btnFav.id = "favActive"
+    btnFav.classList.remove("imgDeExp")
 
     if(localStorage.getItem("arrayFav")){
         let arrayFav = localStorage.getItem("arrayFav")

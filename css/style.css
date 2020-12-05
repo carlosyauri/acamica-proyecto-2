@@ -1023,11 +1023,26 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
 
 .parte2 {
   margin-top: 17px;
-  width: 72px;
+}
+
+.imgDeExp {
+  width: 36px;
+  height: 36px;
+  opacity: 0.5;
+  border: 1px solid #9CAFC3;
+  border-radius: 6px;
+  border-radius: 6px;
+  margin-right: -5px;
+  margin-left: 29px;
 }
 
 .parte1 {
-  width: 80%;
+  width: 50%;
+}
+
+#favActive {
+  height: 24px;
+  margin-bottom: 8px;
 }
 
 .section {

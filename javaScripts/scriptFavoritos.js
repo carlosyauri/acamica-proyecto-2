@@ -301,17 +301,21 @@ if ( `${arrayFav}` == "null") {
 
                     ////////////////////// EVENTO FAVORITOS //////////////////////////////
 
-                    if (img1.src === "./assets/icon-fav.svg"){
+                    if (img1.src === "./assets/icon-trash-normal.svg"){
                 
                         img1.addEventListener("mouseover", () => {
-                            img1.src = "./assets/icon-fav-hover.svg"
+                            img1.src = "./assets/icon-trash-hover.svg"
                         });
             
-                        img1.addEventListener("mouseleave", () => {
-                            img1.src = "./assets/icon-fav.svg"
+                        img1.addEventListener("mouseout", () => {
+                            img1.src = "./assets/icon-trash-normal.svg"
                         });
 
                     }
+
+                    img1.addEventListener("click", () => {
+                        console.log("hola")
+                    })
 
 
 
@@ -325,7 +329,7 @@ if ( `${arrayFav}` == "null") {
                         img2.src = "./assets/icon-download.svg"
                     });
 
-                    img2.addEventListener("click", (e) => {
+                    img2.addEventListener("click", () => {
 
                         descargaGif(arrayFav[i])
 
@@ -375,6 +379,20 @@ if ( `${arrayFav}` == "null") {
     }
 }
 
+// ////////////////////// EVENTO FAVORITOS //////////////////////////////
+
+// if (img1.src === "./assets/icon-trash-normal.svg"){
+
+//     img1.addEventListener("mouseover", () => {
+//         img1.src = "./assets/icon-trash-hover.svg"
+//     });
+
+//     img1.addEventListener("mouseout", () => {
+//         img1.src = "./assets/icon-trash-normal.svg"
+//     });
+
+// }
+
 
 
 async function descargaGif(url) {
@@ -386,5 +404,50 @@ async function descargaGif(url) {
     a.href = window.URL.createObjectURL(file);
     a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
     a.click();
+    
+}
+
+let btnCrear = document.getElementById("btn-gifos");
+
+///////////////////// MODO DARK
+
+if (localStorage.getItem("nocturno-mode") == "true") {
+
+    logoNoc.src = "./assets/logo-mobile-modo-noct.svg"
+    // iconSearch.src = "./assets/icon-search-modo-noct.svg"
+    btnCrear.src = "./assets/CTA-crar-gifo-modo-noc.svg"
+    flechaD.src = "./assets/button-slider-right-md-noct.svg"
+    flechaI.src = "./assets/button-slider-left-md-noct.svg"
+    nocturno.innerHTML = "Modo Diurno"    
+    // modo nocturno activado
+}else {
+    logoNoc.src = "assets/logo-mobile.svg"
+    // iconSearch.src = "assets/icon-search.svg"
+    btnCrear.src = "assets/button-crear-gifo.svg"
+    flechaD.src = "./assets/button-slider-right.svg"
+    flechaI.src = "./assets/button-slider-left.svg"
+    nocturno.innerHTML = "Modo Nocturno" 
+   // modo diruno activado
+}
+
+
+if(localStorage.getItem("nocturno-mode") == "true") {
+    document.body.classList.add("bodyNocturno");
+    logoNoc.src = "./assets/logo-mobile-modo-noct.svg"
+    // iconSearch.src = "./assets/icon-search-modo-noct.svg"
+    btnCrear.src = "./assets/CTA-crar-gifo-modo-noc.svg"
+    flechaD.src = "./assets/button-slider-right-md-noct.svg"
+    flechaI.src = "./assets/button-slider-left-md-noct.svg"
+    nocturno.innerHTML = "Modo Diurno"  
+   
+ 
+} else {
+    document.body.classList.remove("bodyNocturno");
+    logoNoc.src = "assets/logo-mobile.svg"
+    // iconSearch.src = "assets/icon-search.svg"
+    btnCrear.src = "assets/button-crear-gifo.svg"
+    flechaD.src = "./assets/button-slider-right.svg"
+    flechaI.src = "./assets/button-slider-left.svg"
+    nocturno.innerHTML = "Modo Nocturno"
     
 }

@@ -1,11 +1,10 @@
-
-let body = document.querySelector("body")
-let nocturno = document.getElementById("nocturno")
+let body = document.querySelector("body");
+let nocturno = document.getElementById("nocturno");
 let logoNoc = document.getElementById("logoNoc");
 let iconSearch = document.getElementById("icon-search");
 let btnGifos = document.getElementById("btn-gifos");
-let flechaD = document.getElementById("flechaD")
-let flechaI = document.getElementById("flechaI")
+let flechaD = document.getElementById("flechaD");
+let flechaI = document.getElementById("flechaI");
 
 
 

@@ -11,7 +11,7 @@ arrayFavTittle = JSON.parse(arrayFavTittle)
 
 
 
-if ( `${arrayFav}` == "null") {
+if ( `${arrayFav}` == "null" || arrayFav.length == 0) {
 
     let divImg = document.getElementById("sinFav");
     let img = document.createElement("img");
@@ -30,9 +30,13 @@ if ( `${arrayFav}` == "null") {
 
         for ( let i = 0 ; i < arrayFav.length ; i++){
 
+
             let divImg = document.getElementById("resultados");
             let img = document.createElement("img");
             img.src = arrayFav[i];
+
+            divImg.appendChild(img)
+
 
             // //////////////////////////////////////////////////////////////
             // //////////////// H O V E R ///////////////////////////////////
@@ -64,20 +68,31 @@ if ( `${arrayFav}` == "null") {
             divResultados.appendChild(divHouver)
             divImg.appendChild(divResultados)
 
-            ////////////////////// EVENTO FAVORITOS //////////////////////////////
+            ////////////////////// EVENTO ELIMINAR FAVORITOS //////////////////////////////
 
             img1.addEventListener("mouseover", ()=> {
                 img1.src = "./assets/icon-trash-hover.svg"
+                let a = document.createElement("a")
+                a.appendChild(img1)
+
+                divHouver.appendChild(img3)
+                divHouver.appendChild(img2)
+                divHouver.appendChild(a)
+
+                a.href = "favoritos.html"
             })
             img1.addEventListener("mouseout", ()=> {
                 img1.src = "./assets/icon-trash-normal.svg"
             })
 
             img1.addEventListener("click", () => {
-        
-                console.log("hola")
-               
+
+                arrayFav.splice(i,1)
+                localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
+                
+                a.href = "favoritos.html"
             })
+            
            
             ///////////////////////   EVENTO DESCARGA   //////////////////////////
 
@@ -155,6 +170,8 @@ if ( `${arrayFav}` == "null") {
             let divImg = document.getElementById("resultados");
             let img = document.createElement("img");
             img.src = arrayFav[i];
+            divImg.appendChild(img)
+
 
             // //////////////////////////////////////////////////////////////
             // //////////////// H O V E R ///////////////////////////////////
@@ -186,20 +203,34 @@ if ( `${arrayFav}` == "null") {
             divResultados.appendChild(divHouver)
             divImg.appendChild(divResultados)
 
-            ////////////////////// EVENTO FAVORITOS //////////////////////////////
+            ////////////////////// EVENTO ELIMINAR FAVORITOS //////////////////////////////
 
             img1.addEventListener("mouseover", ()=> {
                 img1.src = "./assets/icon-trash-hover.svg"
+                let a = document.createElement("a")
+                a.appendChild(img1)
+
+                divHouver.appendChild(img3)
+                divHouver.appendChild(img2)
+                divHouver.appendChild(a)
+
+                a.href = "favoritos.html"
             })
             img1.addEventListener("mouseout", ()=> {
                 img1.src = "./assets/icon-trash-normal.svg"
             })
 
             img1.addEventListener("click", () => {
-        
-                console.log("hola")
-               
+
+                arrayFav.splice(i,1)
+                localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
+                
+                a.href = "favoritos.html"
             })
+            
+           
+           
+               
             ///////////////////////   EVENTO DESCARGA   //////////////////////////
 
             img2.addEventListener("mouseover", () => {
@@ -264,12 +295,15 @@ if ( `${arrayFav}` == "null") {
     
                 if( i >= arrayFav.length) {
     
-                    verMas.removeChild(divMas)
+                    cerrarLista("#idMas");
     
                 }else{
                     let divImg = document.getElementById("resultados");
                     let img = document.createElement("img");
                     img.src = arrayFav[i];
+
+                    divImg.appendChild(img)
+
 
                     // //////////////////////////////////////////////////////////////
                     // //////////////// H O V E R ///////////////////////////////////
@@ -301,21 +335,32 @@ if ( `${arrayFav}` == "null") {
                     divResultados.appendChild(divHouver)
                     divImg.appendChild(divResultados)
 
-                    ////////////////////// EVENTO FAVORITOS //////////////////////////////
+                    ////////////////////// EVENTO ELIMINAR FAVORITOS //////////////////////////////
 
 
                     img1.addEventListener("mouseover", ()=> {
                         img1.src = "./assets/icon-trash-hover.svg"
+                        let a = document.createElement("a")
+                        a.appendChild(img1)
+        
+                        divHouver.appendChild(img3)
+                        divHouver.appendChild(img2)
+                        divHouver.appendChild(a)
+        
+                        a.href = "favoritos.html"
                     })
                     img1.addEventListener("mouseout", ()=> {
                         img1.src = "./assets/icon-trash-normal.svg"
                     })
-
+        
                     img1.addEventListener("click", () => {
-                
-                        console.log("hola")
-                       
+        
+                        arrayFav.splice(i,1)
+                        localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
+                        
+                        a.href = "favoritos.html"
                     })
+                    
 
 
                     ///////////////////////   EVENTO DESCARGA   //////////////////////////
@@ -379,6 +424,15 @@ if ( `${arrayFav}` == "null") {
         })
     
     }
+}
+
+
+function cerrarLista(x) {
+
+    let elementos = document.querySelectorAll(x)
+    elementos.forEach(element => {
+        element.parentNode.removeChild(element); 
+    })
 }
 
 

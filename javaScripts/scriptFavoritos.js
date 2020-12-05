@@ -66,19 +66,19 @@ if ( `${arrayFav}` == "null") {
 
             ////////////////////// EVENTO FAVORITOS //////////////////////////////
 
-            if (img1.src === "./assets/icon-fav.svg"){
+            img1.addEventListener("mouseover", ()=> {
+                img1.src = "./assets/icon-trash-hover.svg"
+            })
+            img1.addEventListener("mouseout", ()=> {
+                img1.src = "./assets/icon-trash-normal.svg"
+            })
+
+            img1.addEventListener("click", () => {
         
-                img1.addEventListener("mouseover", () => {
-                    img1.src = "./assets/icon-fav-hover.svg"
-                });
-    
-                img1.addEventListener("mouseleave", () => {
-                    img1.src = "./assets/icon-fav.svg"
-                });
-
-            }
-
-
+                console.log("hola")
+               
+            })
+           
             ///////////////////////   EVENTO DESCARGA   //////////////////////////
 
             img2.addEventListener("mouseover", () => {
@@ -188,18 +188,18 @@ if ( `${arrayFav}` == "null") {
 
             ////////////////////// EVENTO FAVORITOS //////////////////////////////
 
-            if (img1.src === "./assets/icon-fav.svg"){
+            img1.addEventListener("mouseover", ()=> {
+                img1.src = "./assets/icon-trash-hover.svg"
+            })
+            img1.addEventListener("mouseout", ()=> {
+                img1.src = "./assets/icon-trash-normal.svg"
+            })
+
+            img1.addEventListener("click", () => {
         
-                img1.addEventListener("mouseover", () => {
-                    img1.src = "./assets/icon-fav-hover.svg"
-                });
-    
-                img1.addEventListener("mouseleave", () => {
-                    img1.src = "./assets/icon-fav.svg"
-                });
-
-            }
-
+                console.log("hola")
+               
+            })
             ///////////////////////   EVENTO DESCARGA   //////////////////////////
 
             img2.addEventListener("mouseover", () => {
@@ -232,6 +232,8 @@ if ( `${arrayFav}` == "null") {
                 divHouver.appendChild(img2)
                 divHouver.appendChild(img1)
                 a.href = "expandir.html"
+
+           
 
             });
 
@@ -301,22 +303,19 @@ if ( `${arrayFav}` == "null") {
 
                     ////////////////////// EVENTO FAVORITOS //////////////////////////////
 
-                    if (img1.src === "./assets/icon-trash-normal.svg"){
-                
-                        img1.addEventListener("mouseover", () => {
-                            img1.src = "./assets/icon-trash-hover.svg"
-                        });
-            
-                        img1.addEventListener("mouseout", () => {
-                            img1.src = "./assets/icon-trash-normal.svg"
-                        });
 
-                    }
-
-                    img1.addEventListener("click", () => {
-                        console.log("hola")
+                    img1.addEventListener("mouseover", ()=> {
+                        img1.src = "./assets/icon-trash-hover.svg"
+                    })
+                    img1.addEventListener("mouseout", ()=> {
+                        img1.src = "./assets/icon-trash-normal.svg"
                     })
 
+                    img1.addEventListener("click", () => {
+                
+                        console.log("hola")
+                       
+                    })
 
 
                     ///////////////////////   EVENTO DESCARGA   //////////////////////////
@@ -338,14 +337,17 @@ if ( `${arrayFav}` == "null") {
                     ///////////////////////   EVENTO EXPANDIR   //////////////////////////
 
                     img3.addEventListener("mouseover", (e) => {
+
                         img3.src = "./assets/icon-max-hover.svg"
 
                         localStorage.setItem("img", `${arrayFav[i]}`)
                         localStorage.setItem("nameImg", `${arrayFavNom[i]}`)
                         localStorage.setItem("title", `${arrayFavTittle[i]}`)
                         
+                      
 
                         let a = document.createElement("a")
+
                         a.appendChild(img3)
                         divHouver.appendChild(a)
                         divHouver.appendChild(img2)
@@ -378,20 +380,6 @@ if ( `${arrayFav}` == "null") {
     
     }
 }
-
-// ////////////////////// EVENTO FAVORITOS //////////////////////////////
-
-// if (img1.src === "./assets/icon-trash-normal.svg"){
-
-//     img1.addEventListener("mouseover", () => {
-//         img1.src = "./assets/icon-trash-hover.svg"
-//     });
-
-//     img1.addEventListener("mouseout", () => {
-//         img1.src = "./assets/icon-trash-normal.svg"
-//     });
-
-// }
 
 
 

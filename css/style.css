@@ -418,6 +418,10 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   height: 100%;
 }
 
+.bodyNocturno .bordeBusquedaActivo {
+  border: 1px solid #FFFFFF;
+}
+
 @media screen and (min-width: 769px) {
   .bordeBusquedaActivo {
     max-width: 49%;
@@ -449,6 +453,10 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   outline: none;
   background: none;
   margin-left: 13px;
+}
+
+.bodyNocturno .inputGral input {
+  color: #FFFFFF;
 }
 
 .inputEspecifico {
@@ -585,6 +593,10 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   color: #572EE5;
   text-align: center;
   line-height: 30px;
+}
+
+.bodyNocturno #h1 {
+  color: #FFFFFF;
 }
 
 .sector-resultados #resultados img {
@@ -916,6 +928,10 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   margin-top: 6px;
 }
 
+.bodyNocturno #h1Exp {
+  color: #FFFFFF;
+}
+
 #p {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
@@ -923,6 +939,10 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   display: block;
   margin-top: 14px;
   margin-bottom: 0px;
+}
+
+.bodyNocturno #p {
+  color: #FFFFFF;
 }
 
 #total {

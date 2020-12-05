@@ -52,7 +52,7 @@ if ( `${arrayFav}` == "null") {
             img2.id = "idImgHouver2"
             img3.id = "idImgHouver3"
 
-            img1.src = "./assets/icon-fav.svg"
+            img1.src = "./assets/icon-trash-normal.svg"
             img2.src = "./assets/icon-download.svg"
             img3.src = "./assets/icon-max-normal.svg"
 
@@ -77,29 +77,6 @@ if ( `${arrayFav}` == "null") {
                 });
 
             }
-
-
-            // img1.addEventListener("click", () => {
-
-            //     if(localStorage.getItem("arrayFav")){
-                    
-            //         let arrayFav = localStorage.getItem("arrayFav")
-            //         arrayFav = JSON.parse(arrayFav)
-            
-            //         arrayFav.push(arrayGifs[i])
-            //         localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
-            //         img1.src = "./assets/icon-fav-active.svg"
-            
-            //     }else{
-            
-            //         let arrayFav = []
-            //         arrayFav.push(arrayGifs[i])
-            //         localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
-            //         img1.src = "./assets/icon-fav-active.svg"
-            //     }
-
-            // })
-
 
 
             ///////////////////////   EVENTO DESCARGA   //////////////////////////
@@ -197,7 +174,7 @@ if ( `${arrayFav}` == "null") {
             img2.id = "idImgHouver2"
             img3.id = "idImgHouver3"
 
-            img1.src = "./assets/icon-fav.svg"
+            img1.src = "./assets/icon-trash-normal.svg"
             img2.src = "./assets/icon-download.svg"
             img3.src = "./assets/icon-max-normal.svg"
 
@@ -222,30 +199,6 @@ if ( `${arrayFav}` == "null") {
                 });
 
             }
-
-
-            // img1.addEventListener("click", () => {
-
-            //     if(localStorage.getItem("arrayFav")){
-                    
-            //         let arrayFav = localStorage.getItem("arrayFav")
-            //         arrayFav = JSON.parse(arrayFav)
-            
-            //         arrayFav.push(arrayGifs[i])
-            //         localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
-            //         img1.src = "./assets/icon-fav-active.svg"
-            
-            //     }else{
-            
-            //         let arrayFav = []
-            //         arrayFav.push(arrayGifs[i])
-            //         localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
-            //         img1.src = "./assets/icon-fav-active.svg"
-            //     }
-
-            // })
-
-
 
             ///////////////////////   EVENTO DESCARGA   //////////////////////////
 
@@ -334,7 +287,7 @@ if ( `${arrayFav}` == "null") {
                     img2.id = "idImgHouver2"
                     img3.id = "idImgHouver3"
 
-                    img1.src = "./assets/icon-fav.svg"
+                    img1.src = "./assets/icon-trash-normal.svg"
                     img2.src = "./assets/icon-download.svg"
                     img3.src = "./assets/icon-max-normal.svg"
 
@@ -359,28 +312,6 @@ if ( `${arrayFav}` == "null") {
                         });
 
                     }
-
-
-                    // img1.addEventListener("click", () => {
-
-                    //     if(localStorage.getItem("arrayFav")){
-                            
-                    //         let arrayFav = localStorage.getItem("arrayFav")
-                    //         arrayFav = JSON.parse(arrayFav)
-                    
-                    //         arrayFav.push(arrayGifs[i])
-                    //         localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
-                    //         img1.src = "./assets/icon-fav-active.svg"
-                    
-                    //     }else{
-                    
-                    //         let arrayFav = []
-                    //         arrayFav.push(arrayGifs[i])
-                    //         localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
-                    //         img1.src = "./assets/icon-fav-active.svg"
-                    //     }
-
-                    // })
 
 
 
@@ -444,124 +375,7 @@ if ( `${arrayFav}` == "null") {
     }
 }
 
-// function hover (){
 
-//             let resultados = document.getElementById("resultados")
-//             let divHouver = document.createElement("div")
-//             divHouver.id = "divHouver"
-
-
-//             let img1 = document.createElement("img")
-//             let img2 = document.createElement("img")
-//             let img3 = document.createElement("img")
-
-//             img1.id = "idImgHouver1"
-//             img2.id = "idImgHouver2"
-//             img3.id = "idImgHouver3"
-
-//             img1.src = "./assets/icon-fav.svg"
-//             img2.src = "./assets/icon-download.svg"
-//             img3.src = "./assets/icon-max-normal.svg"
-
-//             divHouver.appendChild(img3)
-//             divHouver.appendChild(img2)
-//             divHouver.appendChild(img1)
-            
-//             divResultados.appendChild(img)
-//             divResultados.appendChild(divHouver)
-//             resultados.appendChild(divResultados)
-
-//             //////////////////////////////////////////////////////////////////////
-//             ////////////////////// EVENTO FAVORITOS //////////////////////////////
-
-//             if (img1.src === "./assets/icon-fav.svg"){
-        
-//                 img1.addEventListener("mouseover", () => {
-//                     img1.src = "./assets/icon-fav-hover.svg"
-//                 });
-    
-//                 img1.addEventListener("mouseleave", () => {
-//                     img1.src = "./assets/icon-fav.svg"
-//                 });
-
-//             }
-
-
-//             // img1.addEventListener("click", () => {
-
-//             //     if(localStorage.getItem("arrayFav")){
-                    
-//             //         let arrayFav = localStorage.getItem("arrayFav")
-//             //         arrayFav = JSON.parse(arrayFav)
-            
-//             //         arrayFav.push(arrayGifs[i])
-//             //         localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
-//             //         img1.src = "./assets/icon-fav-active.svg"
-            
-//             //     }else{
-            
-//             //         let arrayFav = []
-//             //         arrayFav.push(arrayGifs[i])
-//             //         localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
-//             //         img1.src = "./assets/icon-fav-active.svg"
-//             //     }
-
-//             // })
-
-
-
-
-           
-
-//             //////////////////////////////////////////////////////////////////////
-//             ///////////////////////   EVENTO DESCARGA   //////////////////////////
-
-//             img2.addEventListener("mouseover", () => {
-//                 img2.src = "./assets/icon-download-hover.svg"
-//             });
-
-//             img2.addEventListener("mouseout", () => {
-//                 img2.src = "./assets/icon-download.svg"
-//             });
-
-//             img2.addEventListener("click", (e) => {
-
-//                 descargaGif(arrayFav[i])
-
-//             })
-
-//             //////////////////////////////////////////////////////////////////////
-//             ///////////////////////   EVENTO EXPANDIR   //////////////////////////
-
-//             img3.addEventListener("mouseover", (e) => {
-//                 img3.src = "./assets/icon-max-hover.svg"
-
-//                 localStorage.setItem("img", `${arrayFav[i]}`)
-//                 localStorage.setItem("nameImg", `${arrayFavNom[i]}`)
-//                 localStorage.setItem("title", `${arrayFavTittle[i]}`)
-                
-
-//                 let a = document.createElement("a")
-//                 a.appendChild(img3)
-//                 divHouver.appendChild(a)
-//                 divHouver.appendChild(img2)
-//                 divHouver.appendChild(img1)
-//                 a.href = "expandir.html"
-
-//             });
-
-//             img3.addEventListener("mouseout", () => {
-//                 img3.src = "./assets/icon-max-normal.svg"
-//             });
-
-//             img3.addEventListener("click", () => {
-
-//                 a.href = "expandir.html"
-
-//             })
-
-//             //////////////////////////////////////////////////////////////////////
-// }
 
 async function descargaGif(url) {
 

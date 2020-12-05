@@ -363,7 +363,7 @@ function buscador (){
         let divMas = document.createElement("div");
         divMas.id = "idMas";
         let imgVerMas = document.createElement("img");
-        imgVerMas.src = "assets/CTA-ver-mas.svg";            
+        imgVerMas.src = "assets/CTA-ver-mas.svg";         
         divMas.appendChild(imgVerMas);
         verMas.appendChild(divMas);
     

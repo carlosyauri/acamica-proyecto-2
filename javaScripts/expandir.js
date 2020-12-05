@@ -106,6 +106,9 @@ async function descargaGif(url) {
 
 let nocExp;
 
+let cerrar = document.getElementById("cerrar");
+
+
 
 if (localStorage.getItem("nocturno-mode") == "true") {
     let log = document.getElementById("logoNoc")
@@ -114,7 +117,8 @@ if (localStorage.getItem("nocturno-mode") == "true") {
     nocExp.classList.add("expNoc")
     nocExp.classList.remove("containerExpandir")
     document.body.classList.add("bodyNocturno")
-    logoNoc.src = "assets/logo-mobile-modo-noct.svg"
+    logoNoc.src = "./assets/logo-mobile-modo-noct.svg"
+    cerrar.src = "./assets/close-modo-noct.svg"
  
     // modo nocturno activado
 }else {
@@ -124,6 +128,7 @@ if (localStorage.getItem("nocturno-mode") == "true") {
     // nocExp.classList.add("containerExpandir")
     // nocExp.classList.remove("expNoc")
     logoNoc.src = "assets/logo-mobile.svg"
+    cerrar.src = "./assets/close.svg"
     // iconSearch.src = "assets/icon-search.svg"
    // modo diruno activado
 }

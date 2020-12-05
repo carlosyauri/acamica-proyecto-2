@@ -57,3 +57,43 @@ async function main(){
 }
 
 
+if (localStorage.getItem("nocturno-mode") == "true") {
+
+    logoNoc.src = "./assets/logo-mobile-modo-noct.svg"
+    iconSearch.src = "./assets/icon-search-modo-noct.svg"
+    btnGifos.src = "./assets/CTA-crar-gifo-modo-noc.svg"
+    flechaD.src = "./assets/button-slider-right-md-noct.svg"
+    flechaI.src = "./assets/button-slider-left-md-noct.svg"
+    nocturno.innerHTML = "Modo Diurno"    
+    // modo nocturno activado
+}else {
+    logoNoc.src = "assets/logo-mobile.svg"
+    iconSearch.src = "assets/icon-search.svg"
+    btnGifos.src = "assets/button-crear-gifo.svg"
+    flechaD.src = "./assets/button-slider-right.svg"
+    flechaI.src = "./assets/button-slider-left.svg"
+    nocturno.innerHTML = "Modo Nocturno" 
+   // modo diruno activado
+}
+
+
+if(localStorage.getItem("nocturno-mode") == "true") {
+    document.body.classList.add("bodyNocturno");
+    logoNoc.src = "./assets/logo-mobile-modo-noct.svg"
+    iconSearch.src = "./assets/icon-search-modo-noct.svg"
+    btnGifos.src = "./assets/CTA-crar-gifo-modo-noc.svg"
+    flechaD.src = "./assets/button-slider-right-md-noct.svg"
+    flechaI.src = "./assets/button-slider-left-md-noct.svg"
+    nocturno.innerHTML = "Modo Diurno"  
+   
+ 
+} else {
+    document.body.classList.remove("bodyNocturno");
+    logoNoc.src = "assets/logo-mobile.svg"
+    iconSearch.src = "assets/icon-search.svg"
+    btnGifos.src = "assets/button-crear-gifo.svg"
+    flechaD.src = "./assets/button-slider-right.svg"
+    flechaI.src = "./assets/button-slider-left.svg"
+    nocturno.innerHTML = "Modo Nocturno"
+    
+}

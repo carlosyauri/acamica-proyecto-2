@@ -154,6 +154,10 @@
     width: 90%;
     height: 100%;
 
+    .bodyNocturno & {
+       border: 1px solid #FFFFFF;
+    }
+
     @media screen and (min-width: 769px) {
         max-width: 49%;
     }
@@ -183,6 +187,9 @@
     outline: none;
     background: none;
     margin-left: 13px;
+    .bodyNocturno & {
+        color: #FFFFFF;
+    }
 }
 
 .inputEspecifico{
@@ -315,6 +322,9 @@
     color: #572EE5;
     text-align: center;
     line-height: 30px;
+    .bodyNocturno & {
+        color: #FFFFFF;
+    }
 }
 
 .sector-resultados #resultados img {
@@ -353,6 +363,8 @@
     margin-top: 78px;
     margin-bottom: 79px;
 }
+
+
 
 ///////////////////////////////////////////////////////////////////
 ///////////////////////// SECTOR 2 ////////////////////////////////
@@ -611,6 +623,10 @@
     width: 100%;
     margin-top: 6px;
 
+    .bodyNocturno & {
+        color: #FFFFFF;
+    }
+
 
 }
 
@@ -621,6 +637,10 @@
     display: block;
     margin-top: 14px;
     margin-bottom: 0px;
+
+    .bodyNocturno & {
+        color: #FFFFFF;
+    }
 }
 
 

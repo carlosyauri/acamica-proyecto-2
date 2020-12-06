@@ -58,8 +58,8 @@
                 <p id="parrafo">¡Crea tu GIFO en sólo 3 pasos! <span>(sólo necesitas una cámara para grabar un video)</span></p>
             </div>
             
-        <img src="./assets/camara.svg" alt="icono de una cámara" class="icono-camara">
-        <img src="./assets/element-luz-camara.svg" alt="" class="luz-camara">
+        <img src="./assets/camara.svg" alt="icono de una cámara" class="icono-camara" id="camara">
+        <img src="./assets/element-luz-camara.svg" alt="" class="luz-camara" id="luz-camara">
         
         </section>
         <section class="seccion-grabar">   
@@ -73,7 +73,7 @@
                
             </div>  
 
-            <div class="linea-divisoria"></div>
+            <div class="linea-divisoria" id="lineaDivide"></div>
 
             <div class="btn-comenzar">
 
@@ -89,6 +89,7 @@
  
     </main>
     <footer class="footer"> 
+
         <div class="parte-1">
             <p>Compartir en:</p>
             <ul>
@@ -97,16 +98,18 @@
                 <li><a href="https://www.instagram.com/acamica/" class="fab fa-instagram icon-footer"></a></li>
             </ul>
         </div>
+        
         <div class="parte-2">
                 © GIFOS 2020 All Rights Reserverd.
         </div>
-        <div class="parte-3"></div>
 
     </footer>
+    
     <div class="lineaArribaAbajo"></div>
 
 
     <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script src="./javaScripts/crearGifos.js"></script>
+
 </body>
 </html>

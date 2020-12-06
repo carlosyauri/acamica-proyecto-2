@@ -9,6 +9,7 @@ let flechaI = document.getElementById("flechaI");
 
 
 nocturno.addEventListener("click", () => {
+    
     let dark = document.body.classList.toggle("bodyNocturno")
 
     if(dark) {
@@ -150,6 +151,7 @@ async function menu() {
 menu();
 
 
+
 let sliderLeft = document.getElementById("flechaIzq")
 let sliderRight = document.getElementById("flechaDer")
 
@@ -210,8 +212,39 @@ function cambiarImagen(numero) {
 
 }
 
+// async function prueba(){
+//     try{
 
-// let idTranding = document.getElementById("containerGifosID");
-// idTranding.addEventListener("scroll", () => {
-//     cambiarImagen(1);
-// })
+//         arrayGifos = [];
+//         let nuevo = await ponerGifo();
+
+//         nuevo.data.forEach(element => {
+//             arrayGifos.push(element.images.downsized.url);
+//         });
+
+//         arrayGifosName = [];
+//         nuevo.data.forEach(element => {
+//             arrayGifosName.push(element.username);
+//         });
+
+
+//         arrayGifosTitulos = [];
+//         nuevo.data.forEach(element => {
+//             arrayGifosTitulos.push(element.title);
+//         });
+
+//         for (let i = 3 ; i < 12 ; i++){
+//             let div = document.getElementById(`imgScroll-${i}`)
+//             let img = document.createElement("img")
+//             img.src = arrayGifos[i]
+//             div.appendChild(img)
+//         }
+
+
+//     }
+
+//     catch(err){
+//         console.log('Fallo el fetch', err)
+//     }
+
+// }

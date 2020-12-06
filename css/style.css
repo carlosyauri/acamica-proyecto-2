@@ -481,6 +481,7 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
 }
 
 #resultados {
+  margin-left: 6%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -512,19 +513,21 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   height: 200px;
 }
 
-#divHouver {
-  margin-top: -204px;
-  max-width: 260px;
-  height: 201px;
-  position: absolute;
-  width: 49%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+@media screen and (min-width: 769px) {
+  #divHouver {
+    margin-top: -204px;
+    max-width: 260px;
+    height: 201px;
+    position: absolute;
+    width: 49%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
 }
 
 #idImgHouver1,
@@ -781,13 +784,15 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  overflow: hidden;
   width: 100%;
   margin-bottom: 82px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
 }
 
 @media screen and (min-width: 769px) {
   .sector-3 .conteinerGifos {
+    overflow: hidden;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -1142,6 +1147,10 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   margin-bottom: 3px;
 }
 
+.bodyNocturno .contenedor h1 {
+  color: #FFFFFF;
+}
+
 .contenedor h1 span {
   color: #50e3c2;
 }
@@ -1155,6 +1164,10 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   height: 5px;
   background-color: #572EE5;
   border-radius: 300px;
+}
+
+.espacio {
+  margin-bottom: 96px;
 }
 
 .seccion-grabar {
@@ -1190,7 +1203,7 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
 .paso-a-paso img:last-child {
   margin-left: 500px;
   position: absolute;
-  top: 541px;
+  top: 470px;
 }
 
 .btn-comenzar {
@@ -1218,15 +1231,20 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   text-align: center;
 }
 
+.bodyNocturno .btn-comenzar button {
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+}
+
 #parrafo span {
   display: block;
 }
 
-.desaparecer {
-  display: none;
+.bodyNocturno #parrafo {
+  color: #FFFFFF;
 }
 
-.sacar-texto {
+.desaparecer {
   display: none;
 }
 

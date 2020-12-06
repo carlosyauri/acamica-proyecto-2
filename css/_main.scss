@@ -220,6 +220,7 @@
 }
 
 #resultados {
+    margin-left: 6%;
     display: flex;
     justify-content: center;
         display: grid;
@@ -243,13 +244,17 @@
 }
 
 #divHouver {
-    margin-top: -204px;
-    max-width: 260px;
-    height: 201px;
-    position: absolute;
-    width: 49%; 
-    display: flex;
-    flex-direction: row-reverse;
+
+    @media screen and(min-width: 769px){
+        
+        margin-top: -204px;
+        max-width: 260px;
+        height: 201px;
+        position: absolute;
+        width: 49%; 
+        display: flex;
+        flex-direction: row-reverse;
+    }
 }
 
 
@@ -489,11 +494,15 @@
     flex-wrap: nowrap;
     flex-direction: row;
 
-    overflow: hidden;
     width: 100%;
     margin-bottom: 82px;
 
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+
+    
     @media screen and (min-width: 769px) {
+        overflow: hidden;
         justify-content: center;
         margin-bottom: 182px;
     }
@@ -831,6 +840,10 @@
     line-height: 35px;
     margin-top: 134px;
     margin-bottom: 3px;
+
+    .bodyNocturno &{
+        color: #FFFFFF;
+    }
 }
 
 .contenedor h1 span {
@@ -848,6 +861,11 @@
     height: 5px;
     background-color: #572EE5;
     border-radius: 300px;
+
+}
+
+.espacio {
+    margin-bottom: 96px;
 }
 
 
@@ -877,7 +895,7 @@
 .paso-a-paso img:last-child {
     margin-left: 500px;
     position: absolute;
-    top: 541px;
+    top: 470px;
 }
   
 
@@ -904,6 +922,11 @@
     letter-spacing: 0;
     text-align: center;
 
+    .bodyNocturno & {
+        border: 1px solid #FFFFFF;
+        color: #FFFFFF;
+    }
+
 }
     
 
@@ -912,13 +935,17 @@
     display: block;
 }
 
+#parrafo {
+
+    .bodyNocturno & {
+        color: #FFFFFF;
+    }
+}
+
 .desaparecer {
     display: none;
 }
 
-.sacar-texto {
-    display: none;
-}
 
 #div-iconos {
     margin-left: 375px;

@@ -24,15 +24,22 @@ comenzar.addEventListener("click", () => {
     h1.innerHTML = "¿Nos das acceso a tu cámara?";
     p.innerHTML = "El acceso a tu camara será válido sólo por el tiempo en el que estés creando el GIFO.";
     comenzar.classList.add("sacar-texto")
-  
+    let lineaD = document.getElementById("lineaDivide");
+    lineaD.classList.add("espacio")
+    
+      
 })
 
 //inicio
 btnStart.addEventListener('click', () => {
-    btnRecord.classList.remove("desaparecer")
-    
-   
+
+    let lineaD = document.getElementById("lineaDivide");
+    lineaD.classList.remove("espacio")
+
     btnStart.src ="./assets/paso-a-paso-hover-1.svg";
+    btnRecord.classList.remove("desaparecer")
+
+    
     video.classList.add("video-activo")
     video.classList.remove("video")
     h1.classList.add("sacar-texto")
@@ -210,63 +217,72 @@ async function downloadGif(url) {
 
 
 
-// MODO NOCTURNO
-// let modoDark = document.querySelector("#btnDark");
-// let body = document.querySelector("body");
-// let logoNocturno = document.getElementById("logo-noc");
-// let camara = document.getElementById("camara")
-// let pelicula = document.getElementById("pelicula")
+let btnCrear = document.getElementById("btn-gifos");
+let pelicula = document.getElementById("pelicula");
+let camara = document.getElementById("camara");
+let luzCamara = document.getElementById("luz-camara");
 
-// function modoNocturno() {
+///////////////////// MODO DARK
 
-//     modoDark.addEventListener("click", () => {
-//         let dark = document.body.classList.toggle("dark");
+let nocturno = document.getElementById("nocturno")
 
-//         //acá guardo la clase en modo nocturno
-//         if (dark) {
-//             localStorage.setItem("dark-mode", "true");
-
-//         } else {
-//             localStorage.setItem("dark-mode", "false");
-//         }
-//         //acá obtengo el estado actual en el que estamos navegando
-//         if (localStorage.getItem("dark-mode") == "true") {
-
-//             logoNocturno.src = "assets/logo-mobile-modo-noct.svg"
-//             modoDark.innerHTML = "modo diurno"
-//             camara.src = "./assets/camara-modo-noc.svg"
-//             pelicula.src = "./assets/pelicula-modo-noc.svg"
-            
-//         }
-//         else {
-            
-//             logoNocturno.src = "./assets/logo-mobile.svg"
-//             modoDark.innerHTML = "modo nocturno"
-//             camara.src = "./assets/camara.svg"
-//             pelicula.src = "./assets/pelicula.svg"
-            
-            
-            
-//         }
-//     });
+nocturno.addEventListener("click", () => {
     
-//     if (localStorage.getItem("dark-mode") == "true") {
-//         document.body.classList.add("dark");
-//         logoNocturno.src = "./assets/logo-mobile-modo-noct.svg"
-//         camara.src = "./assets/camara-modo-noc.svg"
-//         pelicula.src = "./assets/pelicula-modo-noc.svg"
-        
-//         modoDark.innerHTML = "modo diurno"
-        
-        
-//     } else {
-//         document.body.classList.remove("dark");
-//         logoNocturno.src = "./assets/logo-mobile.svg"
-//         camara.src = "./assets/camara.svg"
-//         pelicula.src = "./assets/pelicula.svg"
-//         modoDark.innerHTML = "modo nocturno"
-        
-//     }
-// }
+    let dark = document.body.classList.toggle("bodyNocturno")
 
-// modoNocturno();
+    if(dark) {
+        localStorage.setItem("nocturno-mode", "true");
+    }else {
+        localStorage.setItem("nocturno-mode", "false");
+    }
+
+
+    if (localStorage.getItem("nocturno-mode") == "true") {
+
+        logoNoc.src = "./assets/logo-mobile-modo-noct.svg"
+        pelicula.src = "./assets/pelicula-modo-noc.svg"
+        btnCrear.src = "./assets/CTA-crar-gifo-modo-noc.svg"
+        camara.src = "./assets/camara-modo-noc.svg"
+        btnStart.src = "./assets/uno-modo-noc.svg"
+        dos.src = "./assets/dos-modo-noc.svg"
+        tres.src = "./assets/tres-modo-noc.svg"
+        nocturno.innerHTML = "Modo Diurno"    
+        // modo nocturno activado
+    }else {
+        logoNoc.src = "assets/logo-mobile.svg"
+        pelicula.src = "./assets/pelicula.svg"
+        btnCrear.src = "assets/button-crear-gifo.svg"
+        camara.src = "./assets/camara.svg"
+        btnStart.src = "./assets/paso-a-paso-1.svg"
+        dos.src = "./assets/paso-a-paso-2.svg"
+        tres.src = "./assets/paso-a-paso-3.svg"
+        nocturno.innerHTML = "Modo Nocturno" 
+    // modo diruno activado
+    }
+
+});
+
+    if(localStorage.getItem("nocturno-mode") == "true") {
+        document.body.classList.add("bodyNocturno");
+        logoNoc.src = "./assets/logo-mobile-modo-noct.svg"
+        pelicula.src = "./assets/pelicula-modo-noc.svg"
+        btnCrear.src = "./assets/CTA-crar-gifo-modo-noc.svg"
+        camara.src = "./assets/camara-modo-noc.svg"
+        btnStart.src = "./assets/uno-modo-noc.svg"
+        dos.src = "./assets/dos-modo-noc.svg"
+        tres.src = "./assets/tres-modo-noc.svg"
+        nocturno.innerHTML = "Modo Diurno"  
+    
+    
+    } else {
+        document.body.classList.remove("bodyNocturno");
+        logoNoc.src = "assets/logo-mobile.svg"
+        pelicula.src = "./assets/pelicula.svg"
+        btnCrear.src = "assets/button-crear-gifo.svg"
+        camara.src = "./assets/camara.svg"
+        btnStart.src = "./assets/paso-a-paso-1.svg"
+        dos.src = "./assets/paso-a-paso-2.svg"
+        tres.src = "./assets/paso-a-paso-3.svg"
+        nocturno.innerHTML = "Modo Nocturno"
+        
+    }

@@ -308,7 +308,7 @@ function buscador (){
 
             //////////////////////////////////////////////////////////////////////
             ///////////////////////   EVENTO DESCARGA   //////////////////////////
-s
+
             img2.addEventListener("mouseover", () => {
                 img2.src = "./assets/icon-download-hover.svg"
             });

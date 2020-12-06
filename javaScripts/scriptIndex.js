@@ -114,10 +114,17 @@ input.addEventListener("input", async (e) => {
 });
 
 async function autoCompletar (textoIngresado, num) {
+    try{
 
-    let searchGifos = `http://api.giphy.com/v1/gifs/search?api_key=DwxPXTIv1WcfUVgrKe2czLBIw3NDagaf&q=${textoIngresado}&limit=12&offset=${num}`; 
-    let autocompletado = await fetch(searchGifos);
-    return autocompletado.json()
+        let searchGifos = `http://api.giphy.com/v1/gifs/search?api_key=DwxPXTIv1WcfUVgrKe2czLBIw3NDagaf&q=${textoIngresado}&limit=12&offset=${num}`; 
+        let autocompletado = await fetch(searchGifos);
+        return autocompletado.json()
+        
+    }  
+    catch(err){
+    
+        alert("bien")
+    }
 
 }
 
@@ -193,7 +200,6 @@ function g (){
     })
 }
 
-// let divLinea = document.getElementById("divLinea")
 
 function buscador (){
     
@@ -203,11 +209,18 @@ function buscador (){
         let resultados = document.getElementById("resultados");
         let h2 = document.getElementById("h1")
         h2.innerHTML = input.value;
-        
-        // divLinea.classList.add("divLinea")
 
         let lineaArriba = document.getElementById("lineaArriba");
         lineaArriba.classList.add("lineaAparecer")
+
+        let secResultados = document.getElementById("sector-resultados");
+        secResultados.classList.remove("desaparecer");
+
+        let sectorDos = document.getElementById("sector-2")
+        sectorDos.classList.add("desaparecer")
+
+        let sectorMobile = document.getElementById("sectorDosMobile")
+        sectorMobile.classList.remove("desaparecer")
 
         for ( let i = 0; i < arrayGifs.length ; i++){
 

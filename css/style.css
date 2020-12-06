@@ -352,7 +352,7 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
 
 @media screen and (min-width: 769px) {
   #sinFav {
-    margin-right: 86px;
+    margin-right: 175px;
   }
 }
 
@@ -579,11 +579,12 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 35px;
+  margin-bottom: 43px;
 }
 
 @media screen and (min-width: 769px) {
   .divLinea {
-    margin-top: 55px;
+    margin-top: -20px;
     margin-bottom: 81px;
   }
 }
@@ -607,6 +608,7 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
 }
 
 .lineaSugerencia {
+  margin-top: 10px;
   opacity: 0.5;
   border: 1px solid #9CAFC3;
   display: -webkit-box;
@@ -685,10 +687,10 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
 
 #verMas img {
   margin-top: 78px;
-  margin-bottom: 79px;
+  margin-bottom: 34px;
 }
 
-#sector-2 {
+.sector-2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -700,13 +702,14 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
 }
 
 @media screen and (min-width: 769px) {
-  #sector-2 {
+  .sector-2 {
     width: 1440px;
     margin: 0 auto;
   }
 }
 
-#sector-2 h2 {
+.sector-2 h2 {
+  margin-top: 31px;
   width: 100%;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
@@ -716,12 +719,12 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   margin-bottom: 2px;
 }
 
-.bodyNocturno #sector-2 h2 {
+.bodyNocturno .sector-2 h2 {
   color: #FFFFFF;
 }
 
 @media screen and (min-width: 769px) {
-  #sector-2 h2 {
+  .sector-2 h2 {
     margin-top: 53px;
     margin-bottom: 0px;
     font-weight: bold;
@@ -729,25 +732,26 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   }
 }
 
-#sector-2 p {
+.sector-2 p {
   font-family: 'Montserrat', sans-serif;
   width: 50%;
   font-size: 14px;
   color: #572EE5;
   text-align: center;
   line-height: 25px;
+  margin-bottom: 0px;
 }
 
-.bodyNocturno #sector-2 p {
+.bodyNocturno .sector-2 p {
   color: #FFFFFF;
 }
 
 @media screen and (min-width: 769px) {
-  #sector-2 p {
+  .sector-2 p {
     font-size: 16px;
     color: #572EE5;
     margin-top: 7px;
-    margin-bottom: 95px;
+    margin-bottom: 50px;
   }
 }
 
@@ -761,6 +765,7 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   background: #F3F5F8;
+  margin-top: 45px;
 }
 
 .bodyNocturno .sector-3 {
@@ -771,6 +776,7 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   .sector-3 {
     width: 1440px;
     margin: 0 auto;
+    margin-top: 45px;
   }
 }
 

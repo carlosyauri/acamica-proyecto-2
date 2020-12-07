@@ -116,7 +116,7 @@ input.addEventListener("input", async (e) => {
 async function autoCompletar (textoIngresado, num) {
     try{
 
-        let searchGifos = `http://api.giphy.com/v1/gifs/search?api_key=DwxPXTIv1WcfUVgrKe2czLBIw3NDagaf&q=${textoIngresado}&limit=12&offset=${num}`; 
+        let searchGifos = `http://api.giphy.com/v1/gifs/search?api_key=8YMF2nldhRgghMtWCUlXoxfY0hlGDFPL&q=${textoIngresado}&limit=12&offset=${num}`; 
         let autocompletado = await fetch(searchGifos);
         return autocompletado.json()
         
@@ -353,7 +353,7 @@ function buscador (){
                 divHouver.appendChild(a)
                 divHouver.appendChild(img2)
                 divHouver.appendChild(img1)
-                a.href = "expandir.html"
+                a.href = "./expandir.html"
 
             });
 
@@ -363,7 +363,7 @@ function buscador (){
 
             img3.addEventListener("click", () => {
 
-                a.href = "expandir.html"
+                a.href = "./expandir.html"
 
             })
 

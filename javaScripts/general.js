@@ -65,7 +65,7 @@ nocturno.addEventListener("click", () => {
 
 async function ponerGifo() {
     try{
-        let tranding = "http://api.giphy.com/v1/gifs/trending?api_key=DwxPXTIv1WcfUVgrKe2czLBIw3NDagaf&limit=12"
+        let tranding = "http://api.giphy.com/v1/gifs/trending?api_key=8YMF2nldhRgghMtWCUlXoxfY0hlGDFPL&limit=12"
         let data = await fetch(tranding);
         return data.json();
     }

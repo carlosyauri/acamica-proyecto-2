@@ -81,7 +81,7 @@ if ( `${arrayFav}` == "null" || arrayFav.length == 0) {
                 divHouver.appendChild(img2)
                 divHouver.appendChild(a)
 
-                a.href = "favoritos.html"
+                a.href = "./favoritos.html"
             })
             img1.addEventListener("mouseout", ()=> {
                 img1.src = "./assets/icon-trash-normal.svg"
@@ -92,7 +92,7 @@ if ( `${arrayFav}` == "null" || arrayFav.length == 0) {
                 arrayFav.splice(i,1)
                 localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
                 
-                a.href = "favoritos.html"
+                a.href = "./favoritos.html"
             })
             
            
@@ -127,7 +127,7 @@ if ( `${arrayFav}` == "null" || arrayFav.length == 0) {
                 divHouver.appendChild(a)
                 divHouver.appendChild(img2)
                 divHouver.appendChild(img1)
-                a.href = "expandir.html"
+                a.href = "./expandir.html"
 
             });
 
@@ -137,7 +137,7 @@ if ( `${arrayFav}` == "null" || arrayFav.length == 0) {
 
             img3.addEventListener("click", () => {
 
-                a.href = "expandir.html"
+                a.href = "./expandir.html"
 
             })
 
@@ -216,7 +216,7 @@ if ( `${arrayFav}` == "null" || arrayFav.length == 0) {
                 divHouver.appendChild(img2)
                 divHouver.appendChild(a)
 
-                a.href = "favoritos.html"
+                a.href = "./favoritos.html"
             })
             img1.addEventListener("mouseout", ()=> {
                 img1.src = "./assets/icon-trash-normal.svg"
@@ -227,7 +227,7 @@ if ( `${arrayFav}` == "null" || arrayFav.length == 0) {
                 arrayFav.splice(i,1)
                 localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
                 
-                a.href = "favoritos.html"
+                a.href = "./favoritos.html"
             })
             
            
@@ -264,7 +264,7 @@ if ( `${arrayFav}` == "null" || arrayFav.length == 0) {
                 divHouver.appendChild(a)
                 divHouver.appendChild(img2)
                 divHouver.appendChild(img1)
-                a.href = "expandir.html"
+                a.href = "./expandir.html"
 
            
 
@@ -276,7 +276,7 @@ if ( `${arrayFav}` == "null" || arrayFav.length == 0) {
 
             img3.addEventListener("click", () => {
 
-                a.href = "expandir.html"
+                a.href = "./expandir.html"
 
             })
 
@@ -349,7 +349,7 @@ if ( `${arrayFav}` == "null" || arrayFav.length == 0) {
                         divHouver.appendChild(img2)
                         divHouver.appendChild(a)
         
-                        a.href = "favoritos.html"
+                        a.href = "-/favoritos.html"
                     })
                     img1.addEventListener("mouseout", ()=> {
                         img1.src = "./assets/icon-trash-normal.svg"
@@ -360,7 +360,7 @@ if ( `${arrayFav}` == "null" || arrayFav.length == 0) {
                         arrayFav.splice(i,1)
                         localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
                         
-                        a.href = "favoritos.html"
+                        a.href = "./favoritos.html"
                     })
                     
 
@@ -399,7 +399,7 @@ if ( `${arrayFav}` == "null" || arrayFav.length == 0) {
                         divHouver.appendChild(a)
                         divHouver.appendChild(img2)
                         divHouver.appendChild(img1)
-                        a.href = "expandir.html"
+                        a.href = "./expandir.html"
 
                     });
 
@@ -409,7 +409,7 @@ if ( `${arrayFav}` == "null" || arrayFav.length == 0) {
 
                     img3.addEventListener("click", () => {
 
-                        a.href = "expandir.html"
+                        a.href = "./expandir.html"
 
                     })
 

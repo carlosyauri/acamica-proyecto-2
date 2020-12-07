@@ -19,7 +19,7 @@ input.addEventListener("input", async (e) => {
     textoIngresado = e.target.value
     
     let lupita = document.getElementById("icon-search")
-    lupita.src = "assets/close.svg"
+    lupita.src = "./assets/close.svg"
 
 
     if ( textoIngresado.length == ""){
@@ -30,7 +30,7 @@ input.addEventListener("input", async (e) => {
         let lineaSugerencia = document.getElementById("lineaSugerencia")
         lineaSugerencia.classList.remove("lineaSugerencia")
 
-        lupita.src = "assets/icon-search.svg"
+        lupita.src = "./assets/icon-search.svg"
         let bordeInput = document.getElementById("bordeInput")
         bordeInput.classList.add("bordeBusqueda")
         bordeInput.classList.remove("bordeBusquedaActivo")
@@ -38,7 +38,7 @@ input.addEventListener("input", async (e) => {
     }
 
     let lupaBusqueda = document.getElementById("lupaBusqueda")
-    lupaBusqueda.src = "assets/icon-search-copia.svg"
+    lupaBusqueda.src = "./assets/icon-search-copia.svg"
 
     let lineaSugerencia = document.getElementById("lineaSugerencia")
     lineaSugerencia.classList.add("lineaSugerencia")
@@ -93,7 +93,7 @@ input.addEventListener("input", async (e) => {
 
 
                 input.value = elementoLista.innerText;
-                lupita.src = "assets/icon-search.svg"
+                lupita.src = "./assets/icon-search.svg"
 
                 let bordeInput = document.getElementById("bordeInput")
                 bordeInput.classList.add("bordeBusqueda")
@@ -154,9 +154,9 @@ cerrarLupa.addEventListener("click", () => {
     input.value = ""
 
     
-    if (cerrarLupa.src = "assets/close.svg") {
+    if (cerrarLupa.src = "./assets/close.svg") {
         cerrarLista("#divBorrar")
-        cerrarLupa.src = "assets/icon-search.svg"
+        cerrarLupa.src = "./assets/icon-search.svg"
     }
 
 })

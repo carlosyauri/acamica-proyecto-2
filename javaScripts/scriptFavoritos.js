@@ -16,7 +16,7 @@ if ( `${arrayFav}` == "null" || arrayFav.length == 0) {
     let divImg = document.getElementById("sinFav");
     let img = document.createElement("img");
     img.id = "sinResultado"
-    img.src = "/assets/icon-busqueda-sin-resultado.svg"
+    img.src = "./assets/icon-busqueda-sin-resultado.svg"
     let p = document.createElement("p")
     p.innerHTML = "¡Guarda tu primer GIFO en Favoritos para que se muestre aquí!";
 
@@ -162,7 +162,7 @@ if ( `${arrayFav}` == "null" || arrayFav.length == 0) {
         let divMas = document.createElement("div");
         divMas.id = "idMas";
         let imgVerMas = document.createElement("img");
-        imgVerMas.src = "assets/CTA-ver-mas.svg";            
+        imgVerMas.src = "./assets/CTA-ver-mas.svg";            
         divMas.appendChild(imgVerMas);
         verMas.appendChild(divMas);
     
@@ -458,16 +458,14 @@ let btnCrear = document.getElementById("btn-gifos");
 if (localStorage.getItem("nocturno-mode") == "true") {
 
     logoNoc.src = "./assets/logo-mobile-modo-noct.svg"
-    // iconSearch.src = "./assets/icon-search-modo-noct.svg"
     btnCrear.src = "./assets/CTA-crar-gifo-modo-noc.svg"
     flechaD.src = "./assets/button-slider-right-md-noct.svg"
     flechaI.src = "./assets/button-slider-left-md-noct.svg"
     nocturno.innerHTML = "Modo Diurno"    
     // modo nocturno activado
 }else {
-    logoNoc.src = "assets/logo-mobile.svg"
-    // iconSearch.src = "assets/icon-search.svg"
-    btnCrear.src = "assets/button-crear-gifo.svg"
+    logoNoc.src = "./assets/logo-mobile.svg"
+    btnCrear.src = "./assets/button-crear-gifo.svg"
     flechaD.src = "./assets/button-slider-right.svg"
     flechaI.src = "./assets/button-slider-left.svg"
     nocturno.innerHTML = "Modo Nocturno" 
@@ -478,7 +476,6 @@ if (localStorage.getItem("nocturno-mode") == "true") {
 if(localStorage.getItem("nocturno-mode") == "true") {
     document.body.classList.add("bodyNocturno");
     logoNoc.src = "./assets/logo-mobile-modo-noct.svg"
-    // iconSearch.src = "./assets/icon-search-modo-noct.svg"
     btnCrear.src = "./assets/CTA-crar-gifo-modo-noc.svg"
     flechaD.src = "./assets/button-slider-right-md-noct.svg"
     flechaI.src = "./assets/button-slider-left-md-noct.svg"
@@ -487,9 +484,8 @@ if(localStorage.getItem("nocturno-mode") == "true") {
  
 } else {
     document.body.classList.remove("bodyNocturno");
-    logoNoc.src = "assets/logo-mobile.svg"
-    // iconSearch.src = "assets/icon-search.svg"
-    btnCrear.src = "assets/button-crear-gifo.svg"
+    logoNoc.src = "./assets/logo-mobile.svg"
+    btnCrear.src = "./assets/button-crear-gifo.svg"
     flechaD.src = "./assets/button-slider-right.svg"
     flechaI.src = "./assets/button-slider-left.svg"
     nocturno.innerHTML = "Modo Nocturno"

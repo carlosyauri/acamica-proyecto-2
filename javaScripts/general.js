@@ -29,9 +29,9 @@ nocturno.addEventListener("click", () => {
         nocturno.innerHTML = "Modo Diurno"    
         // modo nocturno activado
     }else {
-        logoNoc.src = "assets/logo-mobile.svg"
-        iconSearch.src = "assets/icon-search.svg"
-        btnGifos.src = "assets/button-crear-gifo.svg"
+        logoNoc.src = "./assets/logo-mobile.svg"
+        iconSearch.src = "./assets/icon-search.svg"
+        btnGifos.src = "./assets/button-crear-gifo.svg"
         flechaD.src = "./assets/button-slider-right.svg"
         flechaI.src = "./assets/button-slider-left.svg"
         nocturno.innerHTML = "Modo Nocturno" 
@@ -53,9 +53,9 @@ nocturno.addEventListener("click", () => {
      
     } else {
         document.body.classList.remove("bodyNocturno");
-        logoNoc.src = "assets/logo-mobile.svg"
-        iconSearch.src = "assets/icon-search.svg"
-        btnGifos.src = "assets/button-crear-gifo.svg"
+        logoNoc.src = "./assets/logo-mobile.svg"
+        iconSearch.src = "./assets/icon-search.svg"
+        btnGifos.src = "./assets/button-crear-gifo.svg"
         flechaD.src = "./assets/button-slider-right.svg"
         flechaI.src = "./assets/button-slider-left.svg"
         nocturno.innerHTML = "Modo Nocturno"
@@ -212,39 +212,3 @@ function cambiarImagen(numero) {
 
 }
 
-// async function prueba(){
-//     try{
-
-//         arrayGifos = [];
-//         let nuevo = await ponerGifo();
-
-//         nuevo.data.forEach(element => {
-//             arrayGifos.push(element.images.downsized.url);
-//         });
-
-//         arrayGifosName = [];
-//         nuevo.data.forEach(element => {
-//             arrayGifosName.push(element.username);
-//         });
-
-
-//         arrayGifosTitulos = [];
-//         nuevo.data.forEach(element => {
-//             arrayGifosTitulos.push(element.title);
-//         });
-
-//         for (let i = 3 ; i < 12 ; i++){
-//             let div = document.getElementById(`imgScroll-${i}`)
-//             let img = document.createElement("img")
-//             img.src = arrayGifos[i]
-//             div.appendChild(img)
-//         }
-
-
-//     }
-
-//     catch(err){
-//         console.log('Fallo el fetch', err)
-//     }
-
-// }

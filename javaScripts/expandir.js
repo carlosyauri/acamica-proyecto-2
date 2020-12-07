@@ -158,7 +158,7 @@ let cerrar = document.getElementById("cerrar");
 
 if (localStorage.getItem("nocturno-mode") == "true") {
     let log = document.getElementById("logoNoc")
-    log.src = "/assets/logo-mobile-modo-noct.svg"
+    log.src = "./assets/logo-mobile-modo-noct.svg"
     nocExp = document.getElementById("cExp")
     nocExp.classList.add("expNoc")
     nocExp.classList.remove("containerExpandir")
@@ -171,12 +171,9 @@ if (localStorage.getItem("nocturno-mode") == "true") {
     let log = document.getElementById("logoNoc")
     log.src = "/assets/logo-mobile.svg"
     document.body.classList.remove("bodyNocturno");
-    // nocExp.classList.add("containerExpandir")
-    // nocExp.classList.remove("expNoc")
-    logoNoc.src = "assets/logo-mobile.svg"
+    logoNoc.src = "./assets/logo-mobile.svg"
     cerrar.src = "./assets/close.svg"
-    // iconSearch.src = "assets/icon-search.svg"
-   // modo diruno activado
+
 }
 
 

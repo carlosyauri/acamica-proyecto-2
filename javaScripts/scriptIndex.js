@@ -116,7 +116,7 @@ input.addEventListener("input", async (e) => {
 async function autoCompletar (textoIngresado, num) {
     try{
 
-        let searchGifos = `http://api.giphy.com/v1/gifs/search?api_key=8YMF2nldhRgghMtWCUlXoxfY0hlGDFPL&q=${textoIngresado}&limit=12&offset=${num}`; 
+        let searchGifos = `https://api.giphy.com/v1/gifs/search?api_key=8YMF2nldhRgghMtWCUlXoxfY0hlGDFPL&q=${textoIngresado}&limit=12&offset=${num}`; 
         let autocompletado = await fetch(searchGifos);
         return autocompletado.json()
         

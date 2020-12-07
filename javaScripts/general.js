@@ -24,7 +24,7 @@ nocturno.addEventListener("click", () => {
         logoNoc.src = "./assets/logo-mobile-modo-noct.svg"
         iconSearch.src = "./assets/icon-search-modo-noct.svg"
         btnGifos.src = "./assets/CTA-crar-gifo-modo-noc.svg"
-        flechaD.src = "./assets/button-slider-right-md-noct.svg"
+        flechaD.src = "./assets/Button-slider-right-md-noct.svg"
         flechaI.src = "./assets/button-slider-left-md-noct.svg"
         nocturno.innerHTML = "Modo Diurno"    
         // modo nocturno activado
@@ -32,7 +32,7 @@ nocturno.addEventListener("click", () => {
         logoNoc.src = "./assets/logo-mobile.svg"
         iconSearch.src = "./assets/icon-search.svg"
         btnGifos.src = "./assets/button-crear-gifo.svg"
-        flechaD.src = "./assets/button-slider-right.svg"
+        flechaD.src = "./assets/Button-slider-right.svg"
         flechaI.src = "./assets/button-slider-left.svg"
         nocturno.innerHTML = "Modo Nocturno" 
        // modo diruno activado
@@ -46,7 +46,7 @@ nocturno.addEventListener("click", () => {
         logoNoc.src = "./assets/logo-mobile-modo-noct.svg"
         iconSearch.src = "./assets/icon-search-modo-noct.svg"
         btnGifos.src = "./assets/CTA-crar-gifo-modo-noc.svg"
-        flechaD.src = "./assets/button-slider-right-md-noct.svg"
+        flechaD.src = "./assets/Button-slider-right-md-noct.svg"
         flechaI.src = "./assets/button-slider-left-md-noct.svg"
         nocturno.innerHTML = "Modo Diurno"  
        
@@ -56,7 +56,7 @@ nocturno.addEventListener("click", () => {
         logoNoc.src = "./assets/logo-mobile.svg"
         iconSearch.src = "./assets/icon-search.svg"
         btnGifos.src = "./assets/button-crear-gifo.svg"
-        flechaD.src = "./assets/button-slider-right.svg"
+        flechaD.src = "./assets/Button-slider-right.svg"
         flechaI.src = "./assets/button-slider-left.svg"
         nocturno.innerHTML = "Modo Nocturno"
         

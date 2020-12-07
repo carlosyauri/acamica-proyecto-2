@@ -73,6 +73,10 @@ body {
   transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
+.bodyNocturno .menu .span1 {
+  background: #FFFFFF;
+}
+
 .nav ul {
   width: 100%;
   position: absolute;
@@ -93,6 +97,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.bodyNocturno .nav ul {
+  background: #000000;
 }
 
 .nav ul li {
@@ -136,10 +144,7 @@ body {
 input[type="checkbox"]:checked ~ ul {
   height: 100%;
   position: fixed;
-}
-
-input[type="checkbox"]:checked ~ ul .container-header {
-  position: fixed;
+  margin-top: 25px;
 }
 
 input[type="checkbox"]:checked ~ header {
@@ -433,7 +438,6 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
 }
 
 .inputGral {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

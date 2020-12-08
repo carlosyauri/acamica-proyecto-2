@@ -35,7 +35,7 @@ else {
 async function misGifos(ids) {
 
     try {
-        let gifById = `http://api.giphy.com/v1/gifs?api_key=YaOhho0nfvtDv9KxcBH64ng3iVX6VW9a&ids=${ids}`
+        let gifById = `https://api.giphy.com/v1/gifs?api_key=8YMF2nldhRgghMtWCUlXoxfY0hlGDFPL&ids=${ids}`
     
         let response = await fetch(gifById);
         return response.json()

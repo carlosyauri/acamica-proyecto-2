@@ -10,6 +10,37 @@ let num = 0;
 let arrayCompletado ;
 let textoIngresado;
 
+let sug1 = document.getElementById("sug1")
+let sug2 = document.getElementById("sug2")
+let sug3 = document.getElementById("sug3")
+let sug4 = document.getElementById("sug4")
+let sug5 = document.getElementById("sug5")
+
+sug1.addEventListener("click", () => {
+    textoIngresado = "Reations";
+    completarInput(textoIngresado)
+})
+sug2.addEventListener("click", () => {
+    textoIngresado = "Entertainment";
+    completarInput(textoIngresado)
+})
+sug3.addEventListener("click", () => {
+    textoIngresado = "Sport";
+    completarInput(textoIngresado)
+})
+sug4.addEventListener("click", () => {
+    textoIngresado = "Stickers";
+    completarInput(textoIngresado)
+})
+sug5.addEventListener("click", () => {
+    textoIngresado = "Artists";
+    completarInput(textoIngresado)
+})
+
+
+
+
+
 
 let input = document.getElementById("input")
 input.addEventListener("input", async (e) => {
@@ -17,10 +48,10 @@ input.addEventListener("input", async (e) => {
     cerrarLista("#divBorrar");
 
     textoIngresado = e.target.value
+
     
     let lupita = document.getElementById("icon-search")
     lupita.src = "./assets/close.svg"
-
 
     if ( textoIngresado.length == ""){
 
@@ -105,7 +136,7 @@ input.addEventListener("input", async (e) => {
                 let lupaBusqueda = document.getElementById("lupaBusqueda")
                 lupaBusqueda.src = ""
 
-                buscador();
+                buscador(textoIngresado);
 
             })
         }
@@ -177,7 +208,7 @@ input.addEventListener("keypress", (event) => {
 
     event.keyCode
     if (event.keyCode == 13){
-        buscador ()
+        buscador (textoIngresado)
     }
 
 })
@@ -201,14 +232,14 @@ function g (){
 }
 
 
-function buscador (){
+function buscador (textoIngresado){
     
         cerrarLista("#idMas")
         cerrarLista("#divResultados");
 
         let resultados = document.getElementById("resultados");
         let h2 = document.getElementById("h1")
-        h2.innerHTML = input.value;
+        h2.innerHTML = textoIngresado;
 
         let lineaArriba = document.getElementById("lineaArriba");
         lineaArriba.classList.add("lineaAparecer")
@@ -387,19 +418,167 @@ function buscador (){
         imgVerMas.addEventListener("click", async() => {
 
             num += 12 ;
+            
+            let arrayCompletado =  await autoCompletar(textoIngresado, num)
+            arrayTitle = []
             arrayVerMas = []
-            arrayCompletado = await autoCompletar(textoIngresado, num)
+            arrayGifosNames = []
             arrayCompletado.data.forEach(element => {
-                arrayVerMas.push(element.images.downsized.url)
-            });
+                arrayTitle.push(element.title);
+                arrayVerMas.push(element.images.downsized.url);
+                arrayGifosNames.push(element.username);
+            })            
 
             for ( let i = 0; i < arrayVerMas.length ; i++){
+                
+                let divResultados = document.createElement("div")
+                divResultados.id = "divResultados"
                 let img = document.createElement("img")
                 img.src = arrayVerMas[i];
                 img.alt = "img"
                 img.id = "resultados-img"
                 resultados.appendChild(img)
-            }
+
+
+                let divHouver = document.createElement("div")
+                divHouver.id = "divHouver"
+
+
+                let img1 = document.createElement("img")
+                let img2 = document.createElement("img")
+                let img3 = document.createElement("img")
+
+                img1.id = "idImgHouver1"
+                img2.id = "idImgHouver2"
+                img3.id = "idImgHouver3"
+
+                img1.src = "./assets/icon-fav.svg"
+                img2.src = "./assets/icon-download.svg"
+                img3.src = "./assets/icon-max-normal.svg"
+
+                divHouver.appendChild(img3)
+                divHouver.appendChild(img2)
+                divHouver.appendChild(img1)
+                
+                divResultados.appendChild(img)
+                divResultados.appendChild(divHouver)
+                resultados.appendChild(divResultados)
+
+
+                ////////////////////// EVENTO FAVORITOS //////////////////////////////
+
+                if (img1.src === "./assets/icon-fav.svg"){
+            
+                    img1.addEventListener("mouseover", () => {
+                        img1.src = "./assets/icon-fav-hover.svg"
+                    });
+        
+                    img1.addEventListener("mouseleave", () => {
+                        img1.src = "./assets/icon-fav.svg"
+                    });
+
+                }
+
+
+                img1.addEventListener("click", () => {
+
+                    if(localStorage.getItem("arrayFav")){
+
+                        // OBTENGO DATOS DEL LOCAL STORAGE Y CONVIERTO
+                        
+                        let arrayFav = localStorage.getItem("arrayFav")
+                        arrayFav = JSON.parse(arrayFav)
+
+                        let arrayFavNom = localStorage.getItem("arrayFavNom")
+                        arrayFavNom = JSON.parse(arrayFavNom)
+                
+                        let arrayFavTittle = localStorage.getItem("arrayFavTittle")
+                        arrayFavTittle = JSON.parse(arrayFavTittle)
+
+
+
+                        arrayFav.push(arrayVerMas[i])
+                        arrayFavNom.push(arrayGifosNames[i])
+                        arrayFavTittle.push(arrayTitle[i])
+
+                        localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
+                        localStorage.setItem("arrayFavNom", JSON.stringify(arrayFavNom));
+                        localStorage.setItem("arrayFavTittle", JSON.stringify(arrayFavTittle));
+                        
+                        img1.src = "./assets/icon-fav-active.svg"
+                
+                    }else{
+                
+                        let arrayFav = []
+                        let arrayFavNom = []
+                        let arrayFavTittle = []
+
+                        arrayFav.push(arrayVerMas[i])
+                        arrayFavNom.push(arrayGifosNames[i])
+                        arrayFavTittle.push(arrayTitle[i])
+
+                        localStorage.setItem("arrayFav", JSON.stringify(arrayFav));
+                        localStorage.setItem("arrayFavNom", JSON.stringify(arrayFavNom));
+                        localStorage.setItem("arrayFavTittle", JSON.stringify(arrayFavTittle));
+
+                        img1.src = "./assets/icon-fav-active.svg"
+                    }
+
+                })
+
+
+
+                //////////////////////////////////////////////////////////////////////
+                ///////////////////////   EVENTO DESCARGA   //////////////////////////
+
+                img2.addEventListener("mouseover", () => {
+                    img2.src = "./assets/icon-download-hover.svg"
+                });
+
+                img2.addEventListener("mouseout", () => {
+                    img2.src = "./assets/icon-download.svg"
+                });
+
+                img2.addEventListener("click", (e) => {
+
+                    descargaGif(arrayVerMas[i])
+
+                })
+
+                //////////////////////////////////////////////////////////////////////
+                ///////////////////////   EVENTO EXPANDIR   //////////////////////////
+
+                img3.addEventListener("mouseover", (e) => {
+                    img3.src = "./assets/icon-max-hover.svg"
+
+                    localStorage.setItem("img", `${arrayVerMas[i]}`)
+                    localStorage.setItem("fav", `${arrayVerMas[i]}`)
+                    localStorage.setItem("nameImg", `${arrayGifosNames[i]}`)
+                    localStorage.setItem("title", `${arrayTitle[i]}`)
+                    
+
+                    let a = document.createElement("a")
+                    a.appendChild(img3)
+                    divHouver.appendChild(a)
+                    divHouver.appendChild(img2)
+                    divHouver.appendChild(img1)
+                    a.href = "./expandir.html"
+
+                });
+
+                img3.addEventListener("mouseout", () => {
+                    img3.src = "./assets/icon-max-normal.svg"
+                });
+
+                img3.addEventListener("click", () => {
+
+                    a.href = "./expandir.html"
+
+                })
+
+                //////////////////////////////////////////////////////////////////////
+                
+                }
 
         })
 
@@ -417,4 +596,66 @@ async function descargaGif(url) {
     a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
     a.click();
     
+}
+
+
+async function completarInput (textoIngresado) {
+    
+    cerrarLista("#divBorrar");
+
+    let lupita = document.getElementById("icon-search")
+    lupita.src = "./assets/close.svg"
+
+    input.value = textoIngresado;
+
+    if ( textoIngresado.length == ""){
+
+        let lupaBusqueda = document.getElementById("lupaBusqueda")
+        lupaBusqueda.src = ""
+
+        let lineaSugerencia = document.getElementById("lineaSugerencia")
+        lineaSugerencia.classList.remove("lineaSugerencia")
+
+        let lupita = document.getElementById("icon-search")
+        lupita.src = "./assets/icon-search.svg"
+        let bordeInput = document.getElementById("bordeInput")
+        bordeInput.classList.add("bordeBusqueda")
+        bordeInput.classList.remove("bordeBusquedaActivo")
+        return;
+    }
+
+    let lupaBusqueda = document.getElementById("lupaBusqueda")
+    lupaBusqueda.src = "./assets/icon-search-copia.svg"
+
+    let lineaSugerencia = document.getElementById("lineaSugerencia")
+    lineaSugerencia.classList.add("lineaSugerencia")
+
+
+    //Creando div de sugerencia
+    let divContainer = document.getElementById("divContainer")
+    let div = document.createElement("div")
+    div.setAttribute("class","div-segerencia")
+    div.setAttribute("id", "divBorrar")
+    divContainer.appendChild(div) 
+
+
+
+    let arrayCompletado =  await autoCompletar(textoIngresado, num)
+    arrayTitle = []
+    arrayGifs = []
+    arrayGifosNames = []
+    arrayCompletado.data.forEach(element => {
+        arrayTitle.push(element.title);
+        arrayGifs.push(element.images.downsized.url);
+        arrayGifosNames.push(element.username);
+    })            
+
+
+
+    if(arrayTitle.length == 0) return;
+
+    bordeInput.classList.remove("bordeBusqueda")
+    bordeInput.classList.add("bordeBusquedaActivo")
+
+    buscador(textoIngresado)
 }

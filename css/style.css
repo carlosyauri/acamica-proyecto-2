@@ -759,6 +759,24 @@ input[type="checkbox"]:checked ~ label span:nth-last-child(2) {
   }
 }
 
+#sug1,
+#sug2,
+#sug3,
+#sug4,
+#sug5 {
+  text-decoration: none;
+  color: #572EE5;
+  cursor: pointer;
+}
+
+.bodyNocturno #sug1, .bodyNocturno
+#sug2, .bodyNocturno
+#sug3, .bodyNocturno
+#sug4, .bodyNocturno
+#sug5 {
+  color: #FFFFFF;
+}
+
 .sector-3 {
   display: -webkit-box;
   display: -ms-flexbox;

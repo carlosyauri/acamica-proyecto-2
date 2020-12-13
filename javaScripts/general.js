@@ -24,7 +24,7 @@ nocturno.addEventListener("click", () => {
         logoNoc.src = "./assets/logo-mobile-modo-noct.svg"
         iconSearch.src = "./assets/icon-search-modo-noct.svg"
         btnGifos.src = "./assets/CTA-crar-gifo-modo-noc.svg"
-        flechaD.src = "./assets/button-lider-right-md-noct.svg"
+        flechaD.src = "./assets/button-slider-right-md-noct.svg"
         flechaI.src = "./assets/button-slider-left-md-noct.svg"
         nocturno.innerHTML = "Modo Diurno"    
         // modo nocturno activado
@@ -46,7 +46,7 @@ nocturno.addEventListener("click", () => {
         logoNoc.src = "./assets/logo-mobile-modo-noct.svg"
         iconSearch.src = "./assets/icon-search-modo-noct.svg"
         btnGifos.src = "./assets/CTA-crar-gifo-modo-noc.svg"
-        flechaD.src = "./assets/button-lider-right-md-noct.svg"
+        flechaD.src = "./assets/button-slider-right-md-noct.svg"
         flechaI.src = "./assets/button-slider-left-md-noct.svg"
         nocturno.innerHTML = "Modo Diurno"  
        

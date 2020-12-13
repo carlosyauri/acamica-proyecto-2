@@ -63,19 +63,6 @@ function main() {
 
         parteUno();
 
-            img3.addEventListener("mouseout", () => {
-                img3.src = "./assets/icon-max-normal.svg"
-            });
-
-            img3.addEventListener("click", () => {
-
-                a.href = "expandir.html"
-
-            })
-
-            //////////////////////////////F I N  H O V E R//////////////////////////
-            ///////////////////////////////////////////////////////////////////////
-
         }
     
     
